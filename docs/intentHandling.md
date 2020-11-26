@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# Getting your Pi to do what you say
+# Get your Pi to do what you say
 
 ## Configure you first intent
 
