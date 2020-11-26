@@ -100,7 +100,7 @@ Press CTRL + X and then Y and hit enter to save the file.
 Now you can start your Rhasspy service.
 
 ```shell
-docker-compose up # starts the container, use -d as an argument to run your container in the background
+docker-compose up -d # starts the container
 ```
 
 ### Rasa NLU service
@@ -140,7 +140,9 @@ rasa:
     command: run --enable-api --debug
 ```
 
-![Ra1](../assets/unknown.png)
+```shell
+docker-compose up -d # starts the container
+```
 
 If you get this output, you have been successful in setting up Rasa.
 
@@ -182,12 +184,12 @@ Replace everything in the profile.json file with the following:
         "system": "pocketsphinx"
     },
     "text_to_speech": {
-        "system": "hermes"
+        "system": "nanotts"
     },
     "wake": {
         "pocketsphinx": {
             "keyphrase": "Apollo",
-            "threshold": 9.999999999999999e-33
+            "threshold": 1e-14
         },
         "system": "pocketsphinx"
     }
