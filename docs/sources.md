@@ -23,3 +23,10 @@ https://docs.snips.ai/reference/hermes
 ## ZigBee2MQTT
 
 https://www.zigbee2mqtt.io/
+
+https://www.zigbee2mqtt.io/information/supported_devices.html
+
+## NodeRed
+
+https://nodered.org/docs/user-guide/
+
