@@ -22,16 +22,16 @@ You can find a list of supported languages [here](https://rhasspy.readthedocs.io
 ### Hardware
 
 - Raspberry PI 3b
-- 128GB SD Card
+- 64GB SD Card or more is recommended
 - CC2531 ZigBee-Stick
 - ReSpeaker 4-Mic Array
 - (Philips Hue White & Color Ambiance E27) ZigBee lightbulb
 
 ### We have utilized the following stack for our voice assistant
 
-- Pocketsphinx for the wake word and STT (Speech To Text)
+- Pocketsphinx for the wake word and Speech To Text
 - Rasa NLU for Intent Recognition
-- Hermes MQTT for TTS (Text To Speech)
+- Nano TTS for Text To Speech
 - Rhasspy for Dialogue Management
 
 ### Protocols
