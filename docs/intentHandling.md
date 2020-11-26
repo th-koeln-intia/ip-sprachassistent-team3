@@ -73,3 +73,24 @@ Press CTRL + X and then Y and hit enter to save the file.
 docker-compose up -d # starts the container
 ```
 
+After installing ZigBee2MQTT, you can now configure NodeRed.
+
+## Configuring NodeRed
+
+![nodered1](../assets/nodered1.png)
+
+![nodered2](../assets/nodered2.png)
+
+![nodered3](../assets/nodered3.png)
+
+![nodered4](../assets/nodered4.png)
+
+![nodered5](../assets/nodered5.png)
+
+![nodered6](../assets/nodered6.png)
+
+![nodered7](../assets/nodered7.png)
+
+![nodered8](../assets/nodered8.png)
+
+![nodered9](../assets/nodered9.png)

@@ -2,7 +2,7 @@
 layout : default
 ---
 
-# Protocols
+# Glossary
 
 ## MQTT
 
