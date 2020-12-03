@@ -2,9 +2,12 @@
 layout: default
 nav_order: 2
 title: Handle Your Intents
-nav_order: 2
 parent: Set Up
 ---
+
+{: .no_toc .text-delta }
+1. TOC
+{:toc}
 
 # Get your Pi to do what you say
 
