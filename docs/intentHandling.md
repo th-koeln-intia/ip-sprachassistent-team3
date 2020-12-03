@@ -5,7 +5,7 @@ title: Handle Your Intents
 parent: Setup
 ---
 
-<details open markdown="block">
+<details close markdown="block">
   <summary>
     Content
   </summary>
