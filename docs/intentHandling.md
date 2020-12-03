@@ -1,6 +1,9 @@
 ---
 layout: default
-nav_order: 3
+nav_order: 2
+title: Handle Your Intents
+nav_order: 2
+parent: Set Up
 ---
 
 # Get your Pi to do what you say
