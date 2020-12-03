@@ -1,5 +1,6 @@
 ---
 layout: default
+nav_order: 3
 ---
 
 # Get your Pi to do what you say

@@ -9,7 +9,7 @@ layout : default
 - bidirectional communication protocol designed for transferring messages
 - uses a publish / subscribe model
 - requires use of a central broker
-- messages are published to a broker on a specific topic 
+- messages are published to a broker on a specific topic  
 - standard ports: 1883, 8883 (secure)
 
 ## ZigBee
