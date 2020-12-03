@@ -11,8 +11,7 @@ In order to install Raspbian OS, you will have to download the latest version of
  After downloading Raspberry Pi Imager, select Raspbian Lite Buster as your OS, select your SD card and press write to start flashing your SD card.
 
  ![PI1](../assets/raspberry1.png)
- {% imagesize /assets/raspberry1.png %}
-
+ 
  After flashing your SD card, you should see two partitions, one of which is named boot. Create a file called ssh to enable ssh daemon on boot.
 
  ```shell
