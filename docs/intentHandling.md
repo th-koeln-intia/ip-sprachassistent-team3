@@ -101,5 +101,4 @@ Now you can access the web interface [here](http://raspberrypi:1880).
 
 You can find the complete flow [here](./noderedflow.md).
 
-
 For a more in-depth explanation on how NodeRed works, we recommend you check out their [documentation](https://nodered.org/docs/user-guide/).
