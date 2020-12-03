@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Set Up
-nav_order: 2
-has_children: true
+title: Setting up your Pi
+nav_order: 1
+parent: Set Up
 ---
 
 # Setting up your Pi
