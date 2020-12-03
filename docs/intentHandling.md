@@ -2,7 +2,7 @@
 layout: default
 nav_order: 2
 title: Handle Your Intents
-parent: Set Up
+parent: Setup
 ---
 
 {: .no_toc .text-delta }
