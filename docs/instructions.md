@@ -5,6 +5,10 @@ nav_order: 1
 parent: Setup
 ---
 
+{: .no_toc .text-delta }
+1. TOC
+{:toc}
+
 # Setting up your Pi
 
 ## Installing of the Pi's OS
