@@ -2,12 +2,8 @@
 layout: default
 title: Setting up your Pi
 nav_order: 1
-parent: Set Up
+parent: Setup
 ---
-
-{: .no_toc .text-delta }
-1. TOC
-{:toc}
 
 # Setting up your Pi
 
