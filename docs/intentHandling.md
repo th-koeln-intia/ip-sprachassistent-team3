@@ -5,9 +5,14 @@ title: Handle Your Intents
 parent: Setup
 ---
 
-{: .no_toc .text-delta }
+<details open markdown="block">
+  <summary>
+    Content
+  </summary>
+  {: .text-delta }
 1. TOC
 {:toc}
+</details>
 
 # Get your Pi to do what you say
 

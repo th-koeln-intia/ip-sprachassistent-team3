@@ -5,9 +5,14 @@ nav_order: 1
 parent: Setup
 ---
 
-{: .no_toc .text-delta }
+<details close markdown="block">
+  <summary>
+    Content
+  </summary>
+  {: .text-delta }
 1. TOC
 {:toc}
+</details>
 
 # Setting up your Pi
 
