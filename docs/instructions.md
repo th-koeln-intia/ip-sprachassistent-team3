@@ -196,6 +196,7 @@ Replace everything in the profile.json file with the following:
 }
 ```
 
+
 Press CTRL + X and then Y and hit enter to save the file.
 
 You also need a rasa config named rasa_cfg.yaml in our case
