@@ -91,26 +91,4 @@ docker-compose up -d # starts the container
 
 Now you can access the web interface [here](http://raspberrypi:1880).
 
-### Brief example on how to use NodeRed
-
-![nodered1](../assets/nodered1.png)
-
-![nodered2](../assets/nodered2.png)
-
-![nodered3](../assets/nodered3.png)
-
-![nodered4](../assets/nodered4.png)
-
-![nodered5](../assets/nodered5.png)
-
-![nodered6](../assets/nodered6.png)
-
-![nodered7](../assets/nodered7.png)
-
-![nodered8](../assets/nodered8.png)
-
-![nodered9](../assets/nodered9.png)
-
-You can find the complete flow [here](./noderedflow.md).
-
 For a more in-depth explanation on how NodeRed works, we recommend you check out their [documentation](https://nodered.org/docs/user-guide/).
