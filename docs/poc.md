@@ -161,7 +161,3 @@ This is the complete flow.
     }
 ]
 ```
-
-## Setting a timer
-
-## Setting an alarm

@@ -7,4 +7,4 @@ nav_order: 3
 
 # Custom Intents
 
-[complete flow](./noderedflow.md)
+Here you will find our custom intents.

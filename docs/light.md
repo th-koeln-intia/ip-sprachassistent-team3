@@ -1,9 +1,35 @@
 ---
 layout: default
-nav_exclude: true
+title: Controlling the light
+nav_order: 1
+parent: Custom Intents
 ---
 
-# NodeRedFlow
+<details close markdown="block">
+  <summary>
+    Content
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
+# Controlling the light
+
+## Flow features
+
+- Turn the lights on and off
+- Change the color temperature
+- Change the brightness
+- Control the light in different rooms
+- Feedback on success
+
+![Here is an image of the complete flow.](../flow_light.png).
+
+<details close markdown="block">
+  <summary>
+    JSON for complete flow.
+  </summary>
 
 ```json
 [
@@ -590,3 +616,4 @@ nav_exclude: true
    }
 ]
 ```
+</details>
