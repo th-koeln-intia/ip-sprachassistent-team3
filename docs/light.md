@@ -24,7 +24,7 @@ parent: Custom Intents
 - Control the light in different rooms
 - Feedback on success
 
-![Here is an image of the complete flow.](../flow_light.png).
+![Here is an image of the complete flow.](../assets/flow_light.png).
 
 <details close markdown="block">
   <summary>
