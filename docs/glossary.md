@@ -35,7 +35,7 @@ layout : default
     - is the MQTT client in the MQTT network and is subscribed to a broker (in our case Hermes MQTT)
 - for configurations: configuration.yaml
 
-For a few sources on this topic, click [here](./sources.md#ZigBee2MQTT)
+For a few sources on this topic, click [here](./sources.md#zigbee2mqtt)
 
 
 ## Rhasspy

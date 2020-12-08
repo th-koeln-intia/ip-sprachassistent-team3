@@ -1,5 +1,6 @@
 ---
 layout: default
+nav_exclude: true
 ---
 
 # Sources and other useful links
