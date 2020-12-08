@@ -5,6 +5,12 @@ nav_exclude: true
 
 # Sources and other useful links
 
+## Docker
+
+[https://www.docker.com/](https://www.docker.com/)
+
+[https://opensource.com/resources/what-docker](https://opensource.com/resources/what-docker)
+
 ## MQTT
 
 [http://www.steves-internet-guide.com/mqtt-works/](http://www.steves-internet-guide.com/mqtt-works/)
@@ -43,4 +49,5 @@ nav_exclude: true
 
 ## NodeRed
 
+[https://nodered.org/](https://nodered.org/)
 [https://nodered.org/docs/user-guide/](https://nodered.org/docs/user-guide/)

@@ -52,7 +52,7 @@ You can find a list of supported languages [here](https://rhasspy.readthedocs.io
   - Python Extension
   - Docker Extension
 
-- [Docker](https://docs.docker.com/docker-for-windows/install/)
+- [Docker](https://docs.docker.com/engine/install/debian/)
 
 - [GitBash](https://git-scm.com/downloads)
 
@@ -70,4 +70,4 @@ The word should contain at least six phonemes or have something along the lines 
 
 A variety of sounds means different phonemes which in turn means a more distinctive signature. It decreases the chances of false positives.
 
-[Time to set up your Pi](./instructions.md)
+[Time to set up your Pi](./instructions.md).

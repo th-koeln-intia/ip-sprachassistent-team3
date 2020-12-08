@@ -4,6 +4,16 @@ layout : default
 
 # Glossary
 
+## Docker
+
+- similar to a VM in that it emulates an OS
+- much more lightweight since it does not emulate the Kernel of the OS like a VM does
+- Docker containers use the kernel of your host machine
+- A container contains everything an application needs to run
+- allows applications to be run in different environments without having to worry about things such as dependencies, since they are all in the container
+
+For a few sources on this topic, click [here](./sources.md#docker).
+
 ## MQTT
 
 - bidirectional communication protocol designed for transferring messages
@@ -28,8 +38,6 @@ For a few sources on this topic, click [here](./sources.md#mqtt).
   - end device: has one parent, coordinator or router
 
 For a few sources on this topic, click [here](./sources.md#zigbee).
-
-## Others
 
 ## ZigBee2MQTT
 
@@ -73,3 +81,10 @@ For a few sources on this topic, click [here](./sources.md#rasa).
 - according to it and subscribed messages Rhasspy determines whether to record voice commands or not
 
 For a few sources on this topic, click [here](./sources.md#hermes).
+
+## NodeRed
+
+- browser based flow editor
+- used to connect hardware, interfaces and services used for IoT in a visual programming environment
+
+For a few sources on this topic, click [here](./sources.md#nodered).
