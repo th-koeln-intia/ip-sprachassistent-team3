@@ -12,7 +12,7 @@ layout : default
 - A container contains everything an application needs to run
 - allows applications to be run in different environments without having to worry about things such as dependencies, since they are all in the container
 
-For a few sources on this topic, click [here](./sources.md#docker).
+For additional information on this topic, click [here](./sources.md#docker).
 
 ## MQTT
 
@@ -22,7 +22,7 @@ For a few sources on this topic, click [here](./sources.md#docker).
 - messages are published to a broker on a specific topic  
 - standard ports: 1883, 8883 (secure)
 
-For a few sources on this topic, click [here](./sources.md#mqtt).
+For additional information on this topic, click [here](./sources.md#mqtt).
 
 ## ZigBee
 
@@ -37,7 +37,7 @@ For a few sources on this topic, click [here](./sources.md#mqtt).
   - coordinator: special type of router, forms the network
   - end device: has one parent, coordinator or router
 
-For a few sources on this topic, click [here](./sources.md#zigbee).
+For additional information on this topic, click [here](./sources.md#zigbee).
 
 ## ZigBee2MQTT
 
@@ -47,7 +47,7 @@ For a few sources on this topic, click [here](./sources.md#zigbee).
     - is the MQTT client in the MQTT network and is subscribed to a broker (in our case Hermes MQTT)
 - for configurations: configuration.yaml
 
-For a few sources on this topic, click [here](./sources.md#zigbee2mqtt).
+For additional information on this topic, click [here](./sources.md#zigbee2mqtt).
 
 ## Rhasspy
 
@@ -55,7 +55,7 @@ For a few sources on this topic, click [here](./sources.md#zigbee2mqtt).
 - supports multiple languages
 - works with speech and intent recognizer
 
-For a few sources on this topic, click [here](./sources.md#rhasspy).
+For additional information on this topic, click [here](./sources.md#rhasspy).
 
 ### PocketSphinx
 
@@ -64,7 +64,7 @@ For a few sources on this topic, click [here](./sources.md#rhasspy).
 - dependant on Sphinxbase
 - base for profile for German in Rhasspy
 
-For a few sources on this topic, click [here](./sources.md#pocketsphinx).
+For additional information on this topic, click [here](./sources.md#pocketsphinx).
 
 ### Rasa NLU
 
@@ -73,18 +73,18 @@ For a few sources on this topic, click [here](./sources.md#pocketsphinx).
 - requires a list of messages with labelled intents and entities (training data)  
 - identifies entities and classifies intents mainly by tagging the specific message or part of it based on training data
 
-For a few sources on this topic, click [here](./sources.md#rasa).
+For additional information on this topic, click [here](./sources.md#rasa).
 
 ### Hermes MQTT
 
 - MQTT adapter
 - according to it and subscribed messages Rhasspy determines whether to record voice commands or not
 
-For a few sources on this topic, click [here](./sources.md#hermes).
+For additional information on this topic, click [here](./sources.md#hermes).
 
 ## NodeRed
 
 - browser based flow editor
 - used to connect hardware, interfaces and services used for IoT in a visual programming environment
 
-For a few sources on this topic, click [here](./sources.md#nodered).
+For additional information on this topic, click [here](./sources.md#nodered).
