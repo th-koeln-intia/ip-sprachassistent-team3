@@ -5,8 +5,4 @@ The following documentation provides a thorough guide on how to install a person
 Part of the expected end results include the user being able to switch on/off a lamp, set an alarm/timer, play music and receive information about the weather forecast.
 
 
-## To DO
-1. Update License with correct owner
-
-
 
