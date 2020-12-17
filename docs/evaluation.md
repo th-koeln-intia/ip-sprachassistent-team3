@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Evaluation criteria
-nav_order: 1
+title: Evaluation
+nav_order: 3
 parent: Usability
 ---
 
@@ -14,4 +14,4 @@ parent: Usability
 {:toc}
 </details>
 
-# Evaluation criteria
+# The Pros and Cons

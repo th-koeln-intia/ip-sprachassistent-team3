@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Evaluation
-nav_order: 2
-parent: Usability
+title: Getting the weather report
+nav_order: 4
+parent: Custom Intents
 ---
 
 <details close markdown="block">
@@ -13,5 +13,3 @@ parent: Usability
 1. TOC
 {:toc}
 </details>
-
-# The Pros and Cons
