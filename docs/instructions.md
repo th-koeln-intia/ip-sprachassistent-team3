@@ -125,7 +125,7 @@ mkdir rasa # create a folder for rasa service
 cd rasa # switch into the rasa folder
 mkdir bin # create folder for rasa installation
 cd bin # switch into the bin folder
-docker run -it -v "$(pwd):/app" -p 5005:5005 koenvervloesem/ rasa:latest init # run container once to initialize rasa
+docker run -it -v "$(pwd):/app" -p 5005:5005 koenvervloesem/rasa:latest init # run container once to initialize rasa
 ```
 
 Rasa will now guide you through the initialization process. Rasa will ask you which directory to use. Confirm by pressing enter to use your current directory.
