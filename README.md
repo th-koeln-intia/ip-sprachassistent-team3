@@ -1,18 +1,8 @@
-# sample-project-site
-A simple site which contains a code project with a documentation in form of github pages
+# Apollo
 
-## To DO
-1. Update License with correct owner
-1. Update Gitignore with all files that should not be uploaded
-1. Update the _config.yml with the correct page meta data
-1. Update this ReadMe with an appropriate description of the project
+This project is being developed as part of [INTIA](https://dites.web.th-koeln.de/forschung/projekte/intia/) and aims to introduce clients of social work to new digital tools while also ensuring their privacy.
+The following documentation provides a thorough guide on how to install a personal voice assistant locally using open source resources and thus serving as leverage for beginners who are just becoming familiar with such technology. It also intents to give an insight on key advantages and possible limitations of used technology, important criteria to be met and unexpected hardships during the process.
+Part of the expected end results include the user being able to switch on/off a lamp, set an alarm/timer, play music and receive information about the weather forecast.
 
-## Dokumentation
-The documentation is created in form of GitHub pages following the official documentation:  
-[installation guide](https://docs.github.com/en/github/working-with-github-pages/creating-a-github-pages-site-with-jekyll)
 
-To run the documentation locally Jekyll is required. Follow the official installation [guide](https://jekyllrb.com/docs/installation/) to install Jekyll for the appropriate OS. It is important to install the correct version to prevent potential problems with Github Pages. The officially supported version is listed [here](https://pages.github.com/versions/).  
-The following command starts a local server, if Jekyll is installed with bundler:
-```bash 
-bundle exec jekyll serve
-```
+
