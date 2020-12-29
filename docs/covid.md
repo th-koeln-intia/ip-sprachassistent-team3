@@ -16,7 +16,7 @@ parent: Custom Intents
 
 # The newest Covid-19 news
 
-At the time of our development, the Covid-19 pandemic still controls society. So to adapt to current needs, we have decided to implement an API that enables the user to ask our VA for news updates specifically about Covid-19.
+At the time of our development, the Covid-19 pandemic still has control over our day to day lives. So to adapt to current needs, we have decided to implement an API that enables the user to ask our VA for news updates specifically regarding Covid-19.
 
 ## Flow features
 

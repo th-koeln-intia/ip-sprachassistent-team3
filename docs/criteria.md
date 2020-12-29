@@ -17,3 +17,21 @@ parent: Usability
 # Evaluation criteria
 
 <!---Ziele und Bewertungskriterien--->
+
+<!--->
+
+## Funktionale Vollständigkeit
+
+## Erweiterbarkeit
+
+## Accessability / Support
+
+## Robustheit
+
+## Lernkurve
+
+## Plattformunabhängigkeit
+
+## Kompatibilität
+
+<--->
