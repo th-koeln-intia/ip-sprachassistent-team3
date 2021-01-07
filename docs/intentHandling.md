@@ -34,7 +34,7 @@ nano docker-compose.yml # create docker-compose file using nano
 
 ```shell
 version: '3' # needed to use network_mode
-  services:
+services:
     zigbee2mqtt:
       container_name: zigbee2mqtt
       image: koenkk/zigbee2mqtt

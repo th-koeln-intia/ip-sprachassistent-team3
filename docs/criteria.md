@@ -18,7 +18,7 @@ parent: Usability
 
 <!---Ziele und Bewertungskriterien--->
 
-<!--->
+<!---
 
 ## Funktionale Vollständigkeit
 
@@ -34,4 +34,4 @@ parent: Usability
 
 ## Kompatibilität
 
-<--->
+--->

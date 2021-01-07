@@ -24,7 +24,7 @@ In order to install Raspbian OS, you will have to download the latest version of
 
  ![PI1](../assets/raspberry1.png)
  
- After flashing your SD card, you should see two partitions, one of which is named boot. Create a file called ssh to enable ssh daemon on boot.
+ After flashing your SD card, you should see two partitions, one of which is named boot. Note that you might have to etract and reinsert the SD card in case the part Create a file called ssh to enable ssh daemon on boot.
 
  ```shell
 cd /media/<yourname>/boot/ # change directory to boot partition
@@ -156,7 +156,7 @@ rasa:
 docker-compose up -d # starts the container
 ```
 
-If you get this output, you have been successful in setting up Rasa.
+If you get this output, you have been successful in setting up Rasa. <!-- If it tells you it is done with creating rasa, you have been successful -->
 
 ## Configuring Rhasspy
 

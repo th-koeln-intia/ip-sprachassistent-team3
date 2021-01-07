@@ -87,3 +87,6 @@ Press CTRL + X and then Y and hit enter to save the file.
 
 - Now retrain everything and you should be good to go.
 
+## The Raspberry Pi 3 is too weak for the amount of tasks we want it to perform
+
+We worked on this project with a Pi 3b which only has 1 GB RAM and a CPU that doesn't have enough power to handle the amount of training data we are feeding it for all of the skills we want it to have. While it does train (although taking a lot of time), its response time averages around one to two minutes. Naturally, a VA should not take longer than a few seconds to respond. We therefore recommend using a newer model Raspberry Pi depending on the number of tasks and amount of data you want it to deal with. We realized this problem after training our Pi with all German city names so it could get their weather forecasts.
