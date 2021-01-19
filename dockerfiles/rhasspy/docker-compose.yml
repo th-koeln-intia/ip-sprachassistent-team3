@@ -1,0 +1,14 @@
+rhasspy:
+    image: "rhasspy/rhasspy:latest"
+    container_name: rhasspy
+    restart: unless-stopped
+    volumes:
+        - "/home/pi/.config/rhasspy/profiles:/profiles"
+        - "/etc/localtime:/etc/localtime:ro"
+        - "/home/pi/rhasspy/scripts:/scripts"
+    ports:
+        - "12101:12101"
+        - "12183:12183"
+    devices:
+        - "/dev/snd:/dev/snd"
+    command: --user-profiles /profiles --profile de
