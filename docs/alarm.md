@@ -16,7 +16,7 @@ parent: Custom Intents
 
 # Setting an alarm
 
-One of the features we want our VA to have is for the user to be able to set any number of alarms that won't be discarded even if the VA is accidentally unplugged.
+One of the features we want our VA to have is for the user to be able to set any number of alarms that won't be discarded even if the VA is accidentally unplugged. We decided to use SQLite for this.
 
 ## Flow features
 
