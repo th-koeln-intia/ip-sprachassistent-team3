@@ -4,6 +4,7 @@ nodered:
     restart: unless-stopped
     volumes:
         - "/home/pi/node-red/data:/data"
+        - "/home/pi/node-red/sqlite:/app"
     ports:
         - "1880:1880"
         
