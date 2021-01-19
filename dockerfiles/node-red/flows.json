@@ -1,0 +1,2825 @@
+[
+    {
+        "id": "70e7a28e.cbbbac",
+        "type": "tab",
+        "label": "Deployed",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "61b041b1.ba0ab",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "f6f2187d.f17ca8",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "e4b2ae7a.7f898",
+        "type": "mqtt-broker",
+        "name": "rhasspy mqtt",
+        "broker": "raspberrypi",
+        "port": "12183",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "f444d71d.abe328",
+        "type": "websocket-listener",
+        "path": "ws://raspberrypi:12101/api/events/intent",
+        "wholemsg": "true"
+    },
+    {
+        "id": "1bdce863.699158",
+        "type": "websocket-listener",
+        "path": "ws://raspberrypi:12101/api/events/intent",
+        "wholemsg": "true"
+    },
+    {
+        "id": "9c5457fe.12dc28",
+        "type": "mqtt-broker",
+        "name": "our rhasspy mqtt",
+        "broker": "raspberrypi",
+        "port": "12183",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "5999adec.e962a4",
+        "type": "websocket-listener",
+        "path": "ws://pi4-2:12101/api/events/intent",
+        "wholemsg": "true"
+    },
+    {
+        "id": "51f30724.1c0ce",
+        "type": "mqtt-broker",
+        "name": "mqtt",
+        "broker": "192.168.0.177",
+        "port": "12183",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "c72ecf2e.f1f44",
+        "type": "mpd-server",
+        "host": "192.168.2.206",
+        "port": "6600"
+    },
+    {
+        "id": "ba16d3a5.53dae",
+        "type": "sqlitedb",
+        "db": "/app/timer.db",
+        "mode": "RW"
+    },
+    {
+        "id": "2757a009.1d947",
+        "type": "websocket in",
+        "z": "70e7a28e.cbbbac",
+        "d": true,
+        "name": "rhasspy in",
+        "server": "5999adec.e962a4",
+        "client": "",
+        "x": 70,
+        "y": 280,
+        "wires": [
+            [
+                "d9d32f1c.ec396",
+                "7ffdce9f.b99f5"
+            ]
+        ]
+    },
+    {
+        "id": "d9d32f1c.ec396",
+        "type": "switch",
+        "z": "70e7a28e.cbbbac",
+        "name": "handel input",
+        "property": "intent.name",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Void",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "None",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "GetTime",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "ChangeBrightness",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "ChangeTemp",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "TurnLightOff",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "TurnLightOn",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "State",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "GetWeatherInfo",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "GetRange",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "GetSunriseInfo",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "GetSunsetInfo",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "SetRangeTest",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "GetWeeklyWeatherInfo",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 14,
+        "x": 250,
+        "y": 400,
+        "wires": [
+            [
+                "43aaeb02.5d48f4"
+            ],
+            [
+                "43aaeb02.5d48f4"
+            ],
+            [
+                "668bc712.037c08"
+            ],
+            [
+                "bb5ddce0.c8ef7"
+            ],
+            [
+                "6d640b9b.d8ced4"
+            ],
+            [
+                "d6bfde8.d0af02"
+            ],
+            [
+                "4a62ea11.e15d84"
+            ],
+            [
+                "e9d6158c.39c848"
+            ],
+            [
+                "67325953.32d808"
+            ],
+            [
+                "7b9a4ee1.96b39"
+            ],
+            [
+                "ab84aa84.f2a3d8"
+            ],
+            [
+                "fd5cdd4d.a7f8c"
+            ],
+            [
+                "6c3f251d.9a09bc"
+            ],
+            [
+                "54e40a46.b58d54"
+            ]
+        ]
+    },
+    {
+        "id": "d6bfde8.d0af02",
+        "type": "template",
+        "z": "70e7a28e.cbbbac",
+        "name": "turn off",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "plain",
+        "template": "{\n    \"state\":\"OFF\"\n}",
+        "output": "json",
+        "x": 580,
+        "y": 620,
+        "wires": [
+            [
+                "3d0ae5d4.27affa"
+            ]
+        ]
+    },
+    {
+        "id": "3d0ae5d4.27affa",
+        "type": "mqtt out",
+        "z": "70e7a28e.cbbbac",
+        "name": "",
+        "topic": "zigbee2mqtt/Lampe/set",
+        "qos": "",
+        "retain": "",
+        "broker": "e4b2ae7a.7f898",
+        "x": 1370,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "7ffdce9f.b99f5",
+        "type": "debug",
+        "z": "70e7a28e.cbbbac",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 250,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "4a62ea11.e15d84",
+        "type": "template",
+        "z": "70e7a28e.cbbbac",
+        "name": "turn on",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "plain",
+        "template": "{\n    \"state\":\"ON\"\n}",
+        "output": "json",
+        "x": 580,
+        "y": 560,
+        "wires": [
+            [
+                "3d0ae5d4.27affa"
+            ]
+        ]
+    },
+    {
+        "id": "89181979.853638",
+        "type": "http request",
+        "z": "70e7a28e.cbbbac",
+        "name": "TTS",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://pi4-2:12101/api/text-to-speech",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 1310,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "43aaeb02.5d48f4",
+        "type": "template",
+        "z": "70e7a28e.cbbbac",
+        "name": "Befehl nicht verstanden",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "text",
+        "syntax": "mustache",
+        "template": "Ich habe den Befehl nicht verstanden!",
+        "output": "str",
+        "x": 630,
+        "y": 120,
+        "wires": [
+            [
+                "89181979.853638"
+            ]
+        ]
+    },
+    {
+        "id": "ad9458ce.a00b98",
+        "type": "debug",
+        "z": "70e7a28e.cbbbac",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 510,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "668bc712.037c08",
+        "type": "function",
+        "z": "70e7a28e.cbbbac",
+        "name": "",
+        "func": "var today = new Date();\nvar time = today.getHours() + \" Uhr \" + today.getMinutes();\nmsg = { payload: \"Es ist \" + time };\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 560,
+        "y": 180,
+        "wires": [
+            [
+                "89181979.853638",
+                "ad9458ce.a00b98"
+            ]
+        ]
+    },
+    {
+        "id": "bb5ddce0.c8ef7",
+        "type": "switch",
+        "z": "70e7a28e.cbbbac",
+        "name": "Brightness",
+        "property": "slots.staerke",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "gering",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "mittel",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "stark",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 570,
+        "y": 480,
+        "wires": [
+            [
+                "abbf0372.4422e"
+            ],
+            [
+                "7aef49e0.e9f418"
+            ],
+            [
+                "21627e46.6f51c2"
+            ]
+        ]
+    },
+    {
+        "id": "a81526eb.de9288",
+        "type": "debug",
+        "z": "70e7a28e.cbbbac",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1070,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "abbf0372.4422e",
+        "type": "template",
+        "z": "70e7a28e.cbbbac",
+        "name": "niedrig",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "plain",
+        "template": "{\n    \"brightness\":50\n}",
+        "output": "json",
+        "x": 750,
+        "y": 440,
+        "wires": [
+            [
+                "3d0ae5d4.27affa",
+                "a81526eb.de9288"
+            ]
+        ]
+    },
+    {
+        "id": "21627e46.6f51c2",
+        "type": "template",
+        "z": "70e7a28e.cbbbac",
+        "name": "stark",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "plain",
+        "template": "{\n    \"brightness\":255\n}",
+        "output": "json",
+        "x": 750,
+        "y": 360,
+        "wires": [
+            [
+                "3d0ae5d4.27affa",
+                "a81526eb.de9288"
+            ]
+        ]
+    },
+    {
+        "id": "7aef49e0.e9f418",
+        "type": "template",
+        "z": "70e7a28e.cbbbac",
+        "name": "mittel",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "plain",
+        "template": "{\n    \"brightness\":125\n}",
+        "output": "json",
+        "x": 750,
+        "y": 400,
+        "wires": [
+            [
+                "3d0ae5d4.27affa",
+                "a81526eb.de9288"
+            ]
+        ]
+    },
+    {
+        "id": "6d640b9b.d8ced4",
+        "type": "switch",
+        "z": "70e7a28e.cbbbac",
+        "name": "Temp",
+        "property": "slots.temp",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "warm",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "kalt",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 570,
+        "y": 420,
+        "wires": [
+            [
+                "a1470910.7883b8"
+            ],
+            [
+                "5a56552d.900cdc"
+            ]
+        ]
+    },
+    {
+        "id": "a1470910.7883b8",
+        "type": "template",
+        "z": "70e7a28e.cbbbac",
+        "name": "warm",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "plain",
+        "template": "{\n    \"color_temp\":153\n}",
+        "output": "json",
+        "x": 730,
+        "y": 240,
+        "wires": [
+            [
+                "a81526eb.de9288",
+                "3d0ae5d4.27affa"
+            ]
+        ]
+    },
+    {
+        "id": "5a56552d.900cdc",
+        "type": "template",
+        "z": "70e7a28e.cbbbac",
+        "name": "kalt",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "plain",
+        "template": "{\n    \"color_temp\":0\n}",
+        "output": "json",
+        "x": 730,
+        "y": 300,
+        "wires": [
+            [
+                "a81526eb.de9288",
+                "3d0ae5d4.27affa"
+            ]
+        ]
+    },
+    {
+        "id": "5a249743.114928",
+        "type": "switch",
+        "z": "70e7a28e.cbbbac",
+        "name": "Raum erkennen",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 100,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c6a4478d.e66748",
+        "type": "switch",
+        "z": "70e7a28e.cbbbac",
+        "name": "Raum erkennen",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 100,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e9638aeb.dcc518",
+        "type": "switch",
+        "z": "70e7a28e.cbbbac",
+        "name": "Raum erkennen",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 100,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e9d6158c.39c848",
+        "type": "template",
+        "z": "70e7a28e.cbbbac",
+        "name": "alles roger",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "text",
+        "syntax": "mustache",
+        "template": "alles roger in kambodscha!",
+        "output": "str",
+        "x": 590,
+        "y": 60,
+        "wires": [
+            [
+                "89181979.853638"
+            ]
+        ]
+    },
+    {
+        "id": "8323c707.a98c38",
+        "type": "debug",
+        "z": "70e7a28e.cbbbac",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1450,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "4d5cfc50.04da34",
+        "type": "switch",
+        "z": "70e7a28e.cbbbac",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 100,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "67325953.32d808",
+        "type": "change",
+        "z": "70e7a28e.cbbbac",
+        "name": "Stadt Wetterinfo",
+        "rules": [
+            {
+                "t": "move",
+                "p": "slots.stadt",
+                "pt": "msg",
+                "to": "location.city",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "location.country",
+                "pt": "msg",
+                "to": "germany",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 610,
+        "y": 680,
+        "wires": [
+            [
+                "e749d529.457f98"
+            ]
+        ]
+    },
+    {
+        "id": "9942e966.bf6fb8",
+        "type": "template",
+        "z": "70e7a28e.cbbbac",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Zurzeit sind {{payload.tempc}} Grad in {{payload.location}} ",
+        "output": "str",
+        "x": 1420,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "925184d8.b04658",
+        "type": "function",
+        "z": "70e7a28e.cbbbac",
+        "name": "",
+        "func": "msg = {payload: \"Hier ist das Wetter für \" + msg.location.city + \": \" +  msg.payload[0].weather[0].description + \", bei \" + Math.round(msg.payload[0].main.temp) + \" Grad. Die Luftfeuchtigkeit beträgt: \" + msg.payload[0].main.humidity + \" %.\"};\nreturn msg;\n\n\n\n\n/*\nmsg = {payload: \"Hier ist das Wetter für \" + msg.payload.location + \": \" +  msg.payload.detail + \", bei \" + Math.round(msg.payload.tempc) + \" Grad. Die Luftfeuchtigkeit beträgt: \" + msg.payload.humidity + \" %.\"};\nreturn msg;\n*/",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1050,
+        "y": 560,
+        "wires": [
+            [
+                "89181979.853638"
+            ]
+        ]
+    },
+    {
+        "id": "7b9a4ee1.96b39",
+        "type": "debug",
+        "z": "70e7a28e.cbbbac",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 310,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "ab84aa84.f2a3d8",
+        "type": "change",
+        "z": "70e7a28e.cbbbac",
+        "name": "Stadt Sunrise",
+        "rules": [
+            {
+                "t": "move",
+                "p": "slots.stadt",
+                "pt": "msg",
+                "to": "location.city",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "location.country",
+                "pt": "msg",
+                "to": "germany",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 620,
+        "y": 760,
+        "wires": [
+            [
+                "b223a272.f80be"
+            ]
+        ]
+    },
+    {
+        "id": "740bbaf.b52f144",
+        "type": "debug",
+        "z": "70e7a28e.cbbbac",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1050,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "5ccee1e0.b87e7",
+        "type": "function",
+        "z": "70e7a28e.cbbbac",
+        "name": "",
+        "func": "var time = msg.payload.sunrise;\nvar date = new Date(time * 1000);\nvar hours = date.getHours();\nvar minutes = date.getMinutes();\nmsg = {payload: \"Die Sonne in \" + msg.payload.location + \" geht um \" + hours + \" Uhr\" + minutes + \" auf.\"};\nreturn msg;\n\n\n ",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1100,
+        "y": 760,
+        "wires": [
+            [
+                "89181979.853638"
+            ]
+        ]
+    },
+    {
+        "id": "fd5cdd4d.a7f8c",
+        "type": "change",
+        "z": "70e7a28e.cbbbac",
+        "name": "Stadt Sunrise",
+        "rules": [
+            {
+                "t": "move",
+                "p": "slots.stadt",
+                "pt": "msg",
+                "to": "location.city",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "location.country",
+                "pt": "msg",
+                "to": "germany",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 620,
+        "y": 880,
+        "wires": [
+            [
+                "6b456a7c.f32a04"
+            ]
+        ]
+    },
+    {
+        "id": "1fe0ad7d.c5a193",
+        "type": "function",
+        "z": "70e7a28e.cbbbac",
+        "name": "",
+        "func": "var time = msg.payload.sunset;\nvar date = new Date(time * 1000);\nvar hours = date.getHours();\nvar minutes = date.getMinutes();\nmsg = {payload: \"Die Sonne in \" + msg.payload.location + \" geht um \" + hours + \" Uhr\" + minutes + \" unter.\"};\nreturn msg;\n\n\n ",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1240,
+        "y": 920,
+        "wires": [
+            [
+                "89181979.853638"
+            ]
+        ]
+    },
+    {
+        "id": "6c3f251d.9a09bc",
+        "type": "debug",
+        "z": "70e7a28e.cbbbac",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 310,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "e749d529.457f98",
+        "type": "openweathermap",
+        "z": "70e7a28e.cbbbac",
+        "name": "",
+        "wtype": "forecast",
+        "lon": "",
+        "lat": "",
+        "city": "",
+        "country": "",
+        "language": "de",
+        "x": 870,
+        "y": 720,
+        "wires": [
+            [
+                "8323c707.a98c38",
+                "9942e966.bf6fb8",
+                "925184d8.b04658"
+            ]
+        ]
+    },
+    {
+        "id": "b223a272.f80be",
+        "type": "openweathermap",
+        "z": "70e7a28e.cbbbac",
+        "name": "",
+        "wtype": "current",
+        "lon": "",
+        "lat": "",
+        "city": "",
+        "country": "",
+        "language": "de",
+        "x": 850,
+        "y": 780,
+        "wires": [
+            [
+                "740bbaf.b52f144",
+                "5ccee1e0.b87e7"
+            ]
+        ]
+    },
+    {
+        "id": "6b456a7c.f32a04",
+        "type": "openweathermap",
+        "z": "70e7a28e.cbbbac",
+        "name": "",
+        "wtype": "current",
+        "lon": "",
+        "lat": "",
+        "city": "",
+        "country": "",
+        "language": "de",
+        "x": 830,
+        "y": 920,
+        "wires": [
+            [
+                "1fe0ad7d.c5a193"
+            ]
+        ]
+    },
+    {
+        "id": "feca804f.597f5",
+        "type": "openweathermap",
+        "z": "70e7a28e.cbbbac",
+        "name": "",
+        "wtype": "onecall",
+        "lon": "",
+        "lat": "",
+        "city": "",
+        "country": "",
+        "language": "de",
+        "x": 1010,
+        "y": 980,
+        "wires": [
+            [
+                "337cd14e.b3662e",
+                "138c3049.1cc17"
+            ]
+        ]
+    },
+    {
+        "id": "337cd14e.b3662e",
+        "type": "function",
+        "z": "70e7a28e.cbbbac",
+        "name": "",
+        "func": "\nvar days = [\"Sonntag\", \"Montag\", \"Dienstag\", \"Mittwoch\", \"Donnerstag\", \"Freitag\", \"Samstag\"];\nvar today = new Date();\nvar returnMsg = \"Hier ist das Wetter für die kommenden Tage in \" + msg.entities[0].value + \". \";\nvar i = 0;\nfor (x of msg.payload.daily) {\n   y = new Date(x.dt * 1000); \n   if (y.getDay() != today.getDay()) {\n       returnMsg = returnMsg + days[y.getDay()] + \" \" + x.weather[0].description + \", bei \" + Math.round(x.temp.day) + \"Grad. \";\n   }\n}\n\nmsg = {payload: returnMsg};\n//msg = {payload: \"Test: \" + today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate()+ \" \" + today.getHours() + \":\" + today.getMinutes() + \":\" + today.getSeconds()};\nreturn msg;\n\n/*\nmsg = {payload: \"Hier ist das Wetter für \" + msg.location.city + \": \" +  msg.payload[0].weather[0].description + \", bei \" + Math.round(msg.payload[0].main.temp) + \" Grad. Die Luftfeuchtigkeit beträgt: \" + msg.payload[0].main.humidity + \" %.\"};\nreturn msg;\n\n\n\n\n/*\nmsg = {payload: \"Hier ist das Wetter für \" + msg.payload.location + \": \" +  msg.payload.detail + \", bei \" + Math.round(msg.payload.tempc) + \" Grad. Die Luftfeuchtigkeit beträgt: \" + msg.payload.humidity + \" %.\"};\nreturn msg;\n*/",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1240,
+        "y": 1000,
+        "wires": [
+            [
+                "2bcd4dcd.cb26e2",
+                "89181979.853638"
+            ]
+        ]
+    },
+    {
+        "id": "2bcd4dcd.cb26e2",
+        "type": "debug",
+        "z": "70e7a28e.cbbbac",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1390,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "7098640.692449c",
+        "type": "openweathermap",
+        "z": "70e7a28e.cbbbac",
+        "name": "",
+        "wtype": "onecall",
+        "lon": "",
+        "lat": "",
+        "city": "",
+        "country": "",
+        "language": "de",
+        "x": 470,
+        "y": 1240,
+        "wires": [
+            [
+                "f88325a8.976d48"
+            ]
+        ]
+    },
+    {
+        "id": "f88325a8.976d48",
+        "type": "debug",
+        "z": "70e7a28e.cbbbac",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 870,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "6f018d21.a7a104",
+        "type": "inject",
+        "z": "70e7a28e.cbbbac",
+        "name": "",
+        "props": [
+            {
+                "p": "location",
+                "v": "{\"lat\":50.938361, \"lon\": 6.959974}",
+                "vt": "json"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 180,
+        "y": 1220,
+        "wires": [
+            [
+                "7098640.692449c",
+                "646d3958.041cb8"
+            ]
+        ]
+    },
+    {
+        "id": "3395ef48.fa824",
+        "type": "http request",
+        "z": "70e7a28e.cbbbac",
+        "name": "",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://nominatim.openstreetmap.org/search.php?city=Koeln&format=jsonv2",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 370,
+        "y": 1100,
+        "wires": [
+            [
+                "dc552a08.26c748"
+            ]
+        ]
+    },
+    {
+        "id": "ebc1276e.bf1558",
+        "type": "inject",
+        "z": "70e7a28e.cbbbac",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 1100,
+        "wires": [
+            [
+                "3395ef48.fa824"
+            ]
+        ]
+    },
+    {
+        "id": "dc552a08.26c748",
+        "type": "debug",
+        "z": "70e7a28e.cbbbac",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "138c3049.1cc17",
+        "type": "debug",
+        "z": "70e7a28e.cbbbac",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1270,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "646d3958.041cb8",
+        "type": "debug",
+        "z": "70e7a28e.cbbbac",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 360,
+        "y": 1320,
+        "wires": []
+    },
+    {
+        "id": "54e40a46.b58d54",
+        "type": "change",
+        "z": "70e7a28e.cbbbac",
+        "name": "Stadt Wetterinfo",
+        "rules": [
+            {
+                "t": "move",
+                "p": "slots.stadt",
+                "pt": "msg",
+                "to": "location.city",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "location.country",
+                "pt": "msg",
+                "to": "germany",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 410,
+        "y": 980,
+        "wires": [
+            [
+                "aae8675.44abd98"
+            ]
+        ]
+    },
+    {
+        "id": "aae8675.44abd98",
+        "type": "function",
+        "z": "70e7a28e.cbbbac",
+        "name": "",
+        "func": "msg.url = \"http://open.mapquestapi.com/geocoding/v1/address?key=hYS7bGx4JjHrBGKTz8wfoTkg5aFKN9ai&location=\" + msg.location.city + \",DE\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 620,
+        "y": 980,
+        "wires": [
+            [
+                "c6192330.e0e72",
+                "3337d98a.9e4966"
+            ]
+        ]
+    },
+    {
+        "id": "c6192330.e0e72",
+        "type": "http request",
+        "z": "70e7a28e.cbbbac",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 750,
+        "y": 1040,
+        "wires": [
+            [
+                "31c641fb.b13f5e"
+            ]
+        ]
+    },
+    {
+        "id": "31c641fb.b13f5e",
+        "type": "change",
+        "z": "70e7a28e.cbbbac",
+        "name": "Stadt Wetterinfo",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload.results[0].locations[0].latLng.lat",
+                "pt": "msg",
+                "to": "location.lat",
+                "tot": "msg"
+            },
+            {
+                "t": "move",
+                "p": "payload.results[0].locations[0].latLng.lng",
+                "pt": "msg",
+                "to": "location.lon",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 990,
+        "y": 1080,
+        "wires": [
+            [
+                "feca804f.597f5"
+            ]
+        ]
+    },
+    {
+        "id": "3337d98a.9e4966",
+        "type": "debug",
+        "z": "70e7a28e.cbbbac",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 790,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "36096b22.11b954",
+        "type": "websocket in",
+        "z": "61b041b1.ba0ab",
+        "d": true,
+        "name": "rhasspy",
+        "server": "5999adec.e962a4",
+        "client": "",
+        "x": 70,
+        "y": 40,
+        "wires": [
+            [
+                "1763fdbd.8aa842",
+                "ff3bf41c.51c258"
+            ]
+        ]
+    },
+    {
+        "id": "ff3bf41c.51c258",
+        "type": "debug",
+        "z": "61b041b1.ba0ab",
+        "name": "debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 390,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "1763fdbd.8aa842",
+        "type": "switch",
+        "z": "61b041b1.ba0ab",
+        "name": "intent_handling",
+        "property": "intent.name",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "GetTime",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Void",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "ChangeBrightness",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "ChangeTemp",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "SetLight",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "StartRadio",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "StopRadio",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "NextRadio",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "PrevRadio",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "CurrentSong",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 10,
+        "x": 200,
+        "y": 220,
+        "wires": [
+            [
+                "4e481b37.272974"
+            ],
+            [
+                "d36617b8.897f48"
+            ],
+            [
+                "6ec46ac8.e8e3f4"
+            ],
+            [
+                "61f94c1d.774994"
+            ],
+            [
+                "6b16f78a.842dc8"
+            ],
+            [
+                "7d651efa.65b65"
+            ],
+            [
+                "f05ec98f.ff7c08"
+            ],
+            [
+                "da87565b.194ec8"
+            ],
+            [
+                "ac56407b.9463c"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "5204d975.674518",
+        "type": "mqtt out",
+        "z": "61b041b1.ba0ab",
+        "name": "mqqt set Lampe",
+        "topic": "zigbee2mqtt/Lampe/set",
+        "qos": "",
+        "retain": "",
+        "broker": "e4b2ae7a.7f898",
+        "x": 1180,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "6bdd645e.08e6fc",
+        "type": "template",
+        "z": "61b041b1.ba0ab",
+        "name": "turn off",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "plain",
+        "template": "{\n  \"state\": \"OFF\",\n  \"transition\": 2\n}",
+        "output": "json",
+        "x": 890,
+        "y": 540,
+        "wires": [
+            [
+                "5204d975.674518",
+                "b78b7089.17d1f"
+            ]
+        ]
+    },
+    {
+        "id": "95cbc62.00deb38",
+        "type": "template",
+        "z": "61b041b1.ba0ab",
+        "name": "turn on",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "plain",
+        "template": "{\n  \"state\": \"ON\",\n  \"color_temp\": 155,\n  \"transition\": 2\n}",
+        "output": "json",
+        "x": 900,
+        "y": 500,
+        "wires": [
+            [
+                "5204d975.674518",
+                "b78b7089.17d1f"
+            ]
+        ]
+    },
+    {
+        "id": "614deca.245a814",
+        "type": "http request",
+        "z": "61b041b1.ba0ab",
+        "name": "TTS",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://pi4-2:12101/api/text-to-speech",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 1290,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d36617b8.897f48",
+        "type": "template",
+        "z": "61b041b1.ba0ab",
+        "name": "Nicht verstanden",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "plain",
+        "template": "Das habe ich leider nicht verstanden",
+        "output": "str",
+        "x": 690,
+        "y": 200,
+        "wires": [
+            [
+                "614deca.245a814"
+            ]
+        ]
+    },
+    {
+        "id": "4e481b37.272974",
+        "type": "function",
+        "z": "61b041b1.ba0ab",
+        "name": "uhrzeit",
+        "func": "var today = new Date();\n\nmsg.payload = \"Es ist \" + (today.getHours() + 1) + \" Uhr \" + today.getMinutes();\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 650,
+        "y": 160,
+        "wires": [
+            [
+                "614deca.245a814"
+            ]
+        ]
+    },
+    {
+        "id": "47f6c9b6.6920a8",
+        "type": "switch",
+        "z": "61b041b1.ba0ab",
+        "name": "BrightnessLevel",
+        "property": "slots.brightness",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "niedrig",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "mittel",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "hoch",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 3,
+        "x": 720,
+        "y": 340,
+        "wires": [
+            [
+                "a4c2ef5b.53af3"
+            ],
+            [
+                "66bc6f0b.a9b43"
+            ],
+            [
+                "cfd4301b.85cea"
+            ]
+        ]
+    },
+    {
+        "id": "a4c2ef5b.53af3",
+        "type": "template",
+        "z": "61b041b1.ba0ab",
+        "name": "niedrig",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "plain",
+        "template": "{\n  \"brightness\": 30\n}",
+        "output": "json",
+        "x": 890,
+        "y": 300,
+        "wires": [
+            [
+                "5204d975.674518",
+                "b78b7089.17d1f"
+            ]
+        ]
+    },
+    {
+        "id": "66bc6f0b.a9b43",
+        "type": "template",
+        "z": "61b041b1.ba0ab",
+        "name": "mittel",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "plain",
+        "template": "{\n  \"brightness\": 130\n}",
+        "output": "json",
+        "x": 890,
+        "y": 340,
+        "wires": [
+            [
+                "5204d975.674518",
+                "b78b7089.17d1f"
+            ]
+        ]
+    },
+    {
+        "id": "cfd4301b.85cea",
+        "type": "template",
+        "z": "61b041b1.ba0ab",
+        "name": "hoch",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "plain",
+        "template": "{\n  \"brightness\": 255\n}",
+        "output": "json",
+        "x": 890,
+        "y": 380,
+        "wires": [
+            [
+                "5204d975.674518",
+                "b78b7089.17d1f"
+            ]
+        ]
+    },
+    {
+        "id": "8354143.b2605e8",
+        "type": "switch",
+        "z": "61b041b1.ba0ab",
+        "name": "an/aus",
+        "property": "slots.state",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "an",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "aus",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 690,
+        "y": 520,
+        "wires": [
+            [
+                "95cbc62.00deb38"
+            ],
+            [
+                "6bdd645e.08e6fc"
+            ]
+        ]
+    },
+    {
+        "id": "37af8be1.658304",
+        "type": "switch",
+        "z": "61b041b1.ba0ab",
+        "name": "ColorTemp",
+        "property": "slots.temp",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "warm",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "kalt",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 710,
+        "y": 440,
+        "wires": [
+            [
+                "ab622f2a.46926"
+            ],
+            [
+                "4832d31.990c32c"
+            ]
+        ]
+    },
+    {
+        "id": "ab622f2a.46926",
+        "type": "template",
+        "z": "61b041b1.ba0ab",
+        "name": "warm",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "plain",
+        "template": "{\n  \"color_temp\": 400\n}",
+        "output": "json",
+        "x": 890,
+        "y": 420,
+        "wires": [
+            [
+                "5204d975.674518",
+                "b78b7089.17d1f"
+            ]
+        ]
+    },
+    {
+        "id": "4832d31.990c32c",
+        "type": "template",
+        "z": "61b041b1.ba0ab",
+        "name": "kalt",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "plain",
+        "template": "{\n  \"color_temp\": 50\n}",
+        "output": "json",
+        "x": 890,
+        "y": 460,
+        "wires": [
+            [
+                "5204d975.674518",
+                "b78b7089.17d1f"
+            ]
+        ]
+    },
+    {
+        "id": "6b16f78a.842dc8",
+        "type": "switch",
+        "z": "61b041b1.ba0ab",
+        "name": "Raum erkennen",
+        "property": "slots.room",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "wohnzimmer",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "schlafzimmer",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 520,
+        "y": 520,
+        "wires": [
+            [
+                "8354143.b2605e8"
+            ],
+            [
+                "9d28cd24.8eb01"
+            ]
+        ]
+    },
+    {
+        "id": "61f94c1d.774994",
+        "type": "switch",
+        "z": "61b041b1.ba0ab",
+        "name": "Raum erkennen",
+        "property": "slots.room",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "wohnzimmer",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "schlafzimmer",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 520,
+        "y": 440,
+        "wires": [
+            [
+                "37af8be1.658304"
+            ],
+            [
+                "9d28cd24.8eb01"
+            ]
+        ]
+    },
+    {
+        "id": "6ec46ac8.e8e3f4",
+        "type": "switch",
+        "z": "61b041b1.ba0ab",
+        "name": "Raum erkennen",
+        "property": "slots.room",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "wohnzimmer",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "schlafzimmer",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 520,
+        "y": 340,
+        "wires": [
+            [
+                "47f6c9b6.6920a8"
+            ],
+            [
+                "9d28cd24.8eb01"
+            ]
+        ]
+    },
+    {
+        "id": "9d28cd24.8eb01",
+        "type": "debug",
+        "z": "61b041b1.ba0ab",
+        "name": "Debug für Schlafzimmer",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 770,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "b78b7089.17d1f",
+        "type": "template",
+        "z": "61b041b1.ba0ab",
+        "name": "Erledigt",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Erledigt",
+        "output": "str",
+        "x": 1060,
+        "y": 240,
+        "wires": [
+            [
+                "614deca.245a814"
+            ]
+        ]
+    },
+    {
+        "id": "30093036.25289",
+        "type": "mpd out",
+        "z": "61b041b1.ba0ab",
+        "name": "",
+        "topic": "",
+        "server": "c72ecf2e.f1f44",
+        "x": 840,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7a00f01.3c78d1",
+        "type": "function",
+        "z": "61b041b1.ba0ab",
+        "name": "an",
+        "func": "return msg = {payload : \"play\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 290,
+        "y": 720,
+        "wires": [
+            [
+                "30093036.25289",
+                "f3f4e6ab.10e838"
+            ]
+        ]
+    },
+    {
+        "id": "f05ec98f.ff7c08",
+        "type": "function",
+        "z": "61b041b1.ba0ab",
+        "name": "aus",
+        "func": "return msg = {payload : \"stop\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 290,
+        "y": 760,
+        "wires": [
+            [
+                "30093036.25289",
+                "db13c5e3.b98b08",
+                "f3f4e6ab.10e838"
+            ]
+        ]
+    },
+    {
+        "id": "da87565b.194ec8",
+        "type": "function",
+        "z": "61b041b1.ba0ab",
+        "name": "next",
+        "func": "return msg = {payload : \"next\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 290,
+        "y": 800,
+        "wires": [
+            [
+                "30093036.25289"
+            ]
+        ]
+    },
+    {
+        "id": "db13c5e3.b98b08",
+        "type": "function",
+        "z": "61b041b1.ba0ab",
+        "name": "clear",
+        "func": "return msg = {payload : \"clear\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 470,
+        "y": 760,
+        "wires": [
+            [
+                "30093036.25289",
+                "f3f4e6ab.10e838"
+            ]
+        ]
+    },
+    {
+        "id": "7d651efa.65b65",
+        "type": "function",
+        "z": "61b041b1.ba0ab",
+        "name": "load",
+        "func": "return msg = {payload : \"load radiostations\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 230,
+        "y": 540,
+        "wires": [
+            [
+                "30093036.25289",
+                "f3f4e6ab.10e838",
+                "aaab1cc4.5b039"
+            ]
+        ]
+    },
+    {
+        "id": "f3f4e6ab.10e838",
+        "type": "debug",
+        "z": "61b041b1.ba0ab",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 830,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "3b5d496c.5e8f46",
+        "type": "debug",
+        "z": "61b041b1.ba0ab",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 830,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "aaab1cc4.5b039",
+        "type": "function",
+        "z": "61b041b1.ba0ab",
+        "name": "repeat",
+        "func": "return msg = {payload : \"repeat 1\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 230,
+        "y": 600,
+        "wires": [
+            [
+                "7a00f01.3c78d1",
+                "30093036.25289"
+            ]
+        ]
+    },
+    {
+        "id": "ac56407b.9463c",
+        "type": "function",
+        "z": "61b041b1.ba0ab",
+        "name": "prev",
+        "func": "return msg = {payload : \"previous\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 290,
+        "y": 840,
+        "wires": [
+            [
+                "30093036.25289"
+            ]
+        ]
+    },
+    {
+        "id": "8ca5b94d.f7f088",
+        "type": "mpd in",
+        "z": "61b041b1.ba0ab",
+        "name": "",
+        "topic": "",
+        "server": "c72ecf2e.f1f44",
+        "x": 810,
+        "y": 840,
+        "wires": [
+            [
+                "3b5d496c.5e8f46"
+            ]
+        ]
+    },
+    {
+        "id": "4cc4d68d.54d678",
+        "type": "inject",
+        "z": "61b041b1.ba0ab",
+        "name": "play radio 1",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "topic": "",
+        "payload": "play 1",
+        "payloadType": "str",
+        "x": 250,
+        "y": 1160,
+        "wires": [
+            [
+                "30093036.25289"
+            ]
+        ]
+    },
+    {
+        "id": "4dc3ab1b.f78644",
+        "type": "inject",
+        "z": "61b041b1.ba0ab",
+        "name": "Stop playing",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "topic": "",
+        "payload": "stop",
+        "payloadType": "str",
+        "x": 250,
+        "y": 1060,
+        "wires": [
+            [
+                "30093036.25289"
+            ]
+        ]
+    },
+    {
+        "id": "7e5660ff.23e59",
+        "type": "inject",
+        "z": "61b041b1.ba0ab",
+        "name": "clear database",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "topic": "",
+        "payload": "clear",
+        "payloadType": "str",
+        "x": 260,
+        "y": 1094,
+        "wires": [
+            [
+                "30093036.25289"
+            ]
+        ]
+    },
+    {
+        "id": "c96a0f49.292f8",
+        "type": "inject",
+        "z": "61b041b1.ba0ab",
+        "name": "load playlist radio",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "topic": "",
+        "payload": "load radiostations",
+        "payloadType": "str",
+        "x": 259,
+        "y": 1128,
+        "wires": [
+            [
+                "30093036.25289"
+            ]
+        ]
+    },
+    {
+        "id": "cf0fdde4.34a3b",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "incoming alarm request",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "intent",
+                "v": "setAlarm",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "0.1",
+        "topic": "",
+        "payload": "{\"hour\":17, \"minute\":30, \"today\":true}",
+        "payloadType": "json",
+        "x": 160,
+        "y": 120,
+        "wires": [
+            [
+                "2b276f44.63745"
+            ]
+        ]
+    },
+    {
+        "id": "2e351d60.51353a",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "check timer and delete",
+        "func": "currentDate = new Date();\ncurrentDate.setMilliseconds(0);\n\nfor(var i = 0; i < msg.payload.length; i += 1) {\n    \n    timerDate = new Date(msg.payload[i].year, (msg.payload[i].month - 1), msg.payload[i].day, (msg.payload[i].hour - 1), msg.payload[i].minute, msg.payload[i].second);\n    timerDate.setMilliseconds(0);\n    \n    if(timerDate.getTime() == currentDate.getTime())\n    return msg = {  topic: \"DELETE FROM timer WHERE timer_id = \" + msg.payload[i].timer_id + \";\",\n                    alarm: msg.payload[i].alarm};\n    \n    else if(timerDate < currentDate)\n    return msg = {  topic: \"DELETE FROM timer WHERE timer_id = \" + msg.payload[i].timer_id + \";\",\n                    notification: \"Vorhandener Timer ist während des Neustarts abgelaufen.\"};\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "var currentDate;\nvar timerDate;",
+        "finalize": "",
+        "x": 1520,
+        "y": 160,
+        "wires": [
+            [
+                "28457529.6dee5a",
+                "603c4268.c60f2c",
+                "d180ac7a.bf284"
+            ]
+        ]
+    },
+    {
+        "id": "1eeb6e58.1bd872",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1750,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "8f6967f5.52aa58",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "checking for timers",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "SELECT timer_id, strftime('%H',time) as hour, strftime('%M',time) as minute, strftime('%S',time) as second, strftime('%d',time) as day, strftime('%m',time) as month, strftime('%Y',time) as year, alarm FROM timer;",
+        "x": 1260,
+        "y": 100,
+        "wires": [
+            [
+                "28457529.6dee5a"
+            ]
+        ]
+    },
+    {
+        "id": "28457529.6dee5a",
+        "type": "sqlite",
+        "z": "f6f2187d.f17ca8",
+        "mydb": "ba16d3a5.53dae",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "send statement to db",
+        "x": 1260,
+        "y": 160,
+        "wires": [
+            [
+                "2e351d60.51353a",
+                "d180ac7a.bf284"
+            ]
+        ]
+    },
+    {
+        "id": "8b88f2a7.21c5b8",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "build insert statement",
+        "func": "currentDate = new Date();\nalarmDate = new Date();\n\ncurrentDate.setHours(currentDate.getHours() + 1);\n\nif( !msg.slots.alarm_hour )\n    msg.slots.alarm_hour = 0;\n    \nif( !msg.slots.alarm_minute )\n    msg.slots.alarm_minute = 0;\n\nalarmDate.setHours(msg.slots.alarm_hour);\nalarmDate.setMinutes(msg.slots.alarm_minute);\n\nif(alarmDate > currentDate ) {\nreturn msg = {  topic: \"INSERT INTO timer (time, alarm) VALUES (datetime('\" + alarmDate.getFullYear() + \"-\" + ('0' + (alarmDate.getMonth() + 1)).slice(-2) + \"-\" + ('0' + alarmDate.getDate()).slice(-2) + \" \"+ ('0' + alarmDate.getHours()).slice(-2) + \":\" + ('0' + alarmDate.getMinutes()).slice(-2) + \"'), 1);\",\n                notification: \"Wecker gestellt für heute um \" + alarmDate.getHours() + \" Uhr \" + alarmDate.getMinutes() + \".\"};\n} else {\nalarmDate.setDate(alarmDate.getDate() + 1);\nreturn msg = {  topic: \"INSERT INTO timer (time, alarm) VALUES (datetime('\" + alarmDate.getFullYear() + \"-\" + ('0' + (alarmDate.getMonth() + 1)).slice(-2) + \"-\" + ('0' + alarmDate.getDate()).slice(-2) + \" \"+ ('0' + alarmDate.getHours()).slice(-2) + \":\" + ('0' + alarmDate.getMinutes()).slice(-2) + \"'), 1);\",\n                notification: \"Wecker gestellt für morgen um \" + alarmDate.getHours() + \" Uhr \" + alarmDate.getMinutes() + \".\"};\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "var currentDate;\nvar alarmDate;",
+        "finalize": "",
+        "x": 980,
+        "y": 160,
+        "wires": [
+            [
+                "28457529.6dee5a"
+            ]
+        ]
+    },
+    {
+        "id": "5856d35f.4b1d94",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "notification output",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "notification",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1950,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "d180ac7a.bf284",
+        "type": "switch",
+        "z": "f6f2187d.f17ca8",
+        "name": "check for notification",
+        "property": "notification",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nnull"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1520,
+        "y": 220,
+        "wires": [
+            [
+                "5856d35f.4b1d94",
+                "5e97ba59.6c7b94"
+            ]
+        ]
+    },
+    {
+        "id": "2b276f44.63745",
+        "type": "switch",
+        "z": "f6f2187d.f17ca8",
+        "name": "check for intent",
+        "property": "intent.name",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "setAlarm",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "setTimer",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "stopAlarm",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "stopTimer",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "getRemainingTime",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 5,
+        "x": 580,
+        "y": 240,
+        "wires": [
+            [
+                "8b88f2a7.21c5b8"
+            ],
+            [
+                "ea3a1779.3afba8"
+            ],
+            [
+                "785801fd.0eb4"
+            ],
+            [
+                "f432812d.e2f618"
+            ],
+            [
+                "85945e15.274d8"
+            ]
+        ]
+    },
+    {
+        "id": "ea3a1779.3afba8",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "build insert statement",
+        "func": "date = new Date();\n\nif( !msg.slots.timer_stunde )\n    msg.slots.timer_stunde = 0;\n    \nif( !msg.slots.timer_minute )\n    msg.slots.timer_minute = 0;\n    \nif( !msg.slots.timer_sekunden )\n    msg.slots.timer_sekunden = 0;\n\ndate.setHours((date.getHours() + 1) + msg.slots.timer_stunde);\ndate.setMinutes(date.getMinutes() + msg.slots.timer_minute);\ndate.setSeconds(date.getSeconds() + msg.slots.timer_sekunden);\n\nif(msg.slots.timer_stunde == 1) hourStr = \" Stunde, \";\nelse hourStr = \" Stunden, \";\n\nif(msg.slots.timer_minute == 1) minuteStr = \" Minute und \";\nelse minuteStr = \" Minuten und \";\n\nif(msg.slots.timer_sekunden == 1) secondStr = \" Sekunde.\";\nelse secondStr = \" Sekunden.\";\n\nreturn msg = {  topic: \"INSERT INTO timer (time, alarm) VALUES (datetime('\" + date.getFullYear() + \"-\" + ('0' + (date.getMonth() + 1)).slice(-2) + \"-\" + ('0' + date.getDate()).slice(-2) + \" \"+ ('0' + date.getHours()).slice(-2) + \":\" + ('0' + date.getMinutes()).slice(-2) + \":\" + ('0' + date.getSeconds()).slice(-2) + \"'), 0);\",\n                notification: \"Timer gestellt für \" + msg.slots.timer_stunde + hourStr + msg.slots.timer_minute + minuteStr + msg.slots.timer_sekunden + secondStr};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "var date;\n\nvar hourStr;\nvar minuteStr;\nvar secondStr;",
+        "finalize": "",
+        "x": 980,
+        "y": 220,
+        "wires": [
+            [
+                "28457529.6dee5a"
+            ]
+        ]
+    },
+    {
+        "id": "92762217.38c01",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "incoming timer request",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "intent",
+                "v": "setTimer",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"hours\":0, \"minutes\":0, \"seconds\":65}",
+        "payloadType": "json",
+        "x": 160,
+        "y": 180,
+        "wires": [
+            [
+                "2b276f44.63745"
+            ]
+        ]
+    },
+    {
+        "id": "603c4268.c60f2c",
+        "type": "switch",
+        "z": "f6f2187d.f17ca8",
+        "name": "check if alarm or timer",
+        "property": "alarm",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1520,
+        "y": 280,
+        "wires": [
+            [
+                "785801fd.0eb4",
+                "80276a89.9a72b8"
+            ],
+            [
+                "f432812d.e2f618",
+                "b97bc1b.c9f854"
+            ]
+        ]
+    },
+    {
+        "id": "785801fd.0eb4",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "alarm output",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "alarm",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1930,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "f432812d.e2f618",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "timer output",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "alarm",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1930,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "c01c1740.9311b8",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "alarm stop request",
+        "props": [
+            {
+                "p": "intent",
+                "v": "stopAlarm",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 170,
+        "y": 240,
+        "wires": [
+            [
+                "2b276f44.63745"
+            ]
+        ]
+    },
+    {
+        "id": "e142b617.aa37d8",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "timer stop request",
+        "props": [
+            {
+                "p": "intent",
+                "v": "stopTimer",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 170,
+        "y": 300,
+        "wires": [
+            [
+                "2b276f44.63745"
+            ]
+        ]
+    },
+    {
+        "id": "59e06894.3b173",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "remaining time request",
+        "props": [
+            {
+                "p": "intent",
+                "v": "getRemainingTime",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 160,
+        "y": 360,
+        "wires": [
+            [
+                "2b276f44.63745"
+            ]
+        ]
+    },
+    {
+        "id": "85945e15.274d8",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "build select statement",
+        "func": "return msg = {topic: \"SELECT timer_id, strftime('%H',min(time)) as hour, strftime('%M',min(time)) as minute, strftime('%S',min(time)) as second, strftime('%d',min(time)) as day, strftime('%m',min(time)) as month, strftime('%Y',min(time)) as year FROM timer WHERE alarm = 0;\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 980,
+        "y": 340,
+        "wires": [
+            [
+                "a5f68aa5.944a4"
+            ]
+        ]
+    },
+    {
+        "id": "a5f68aa5.944a4",
+        "type": "sqlite",
+        "z": "f6f2187d.f17ca8",
+        "mydb": "ba16d3a5.53dae",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "send statement to db",
+        "x": 1260,
+        "y": 340,
+        "wires": [
+            [
+                "f60e9aa2.b52e5",
+                "1eeb6e58.1bd872"
+            ]
+        ]
+    },
+    {
+        "id": "f60e9aa2.b52e5",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "check remaining time",
+        "func": "if(msg.payload[0].timer_id == null) return msg = {notification: \"Keine aktiven Timer vorhanden.\"};\n\ncurrentDate = new Date();\ncurrentDate.setMilliseconds(0);\n\ntimerDate = new Date(msg.payload[0].year, (msg.payload[0].month - 1), msg.payload[0].day, (msg.payload[0].hour - 1), msg.payload[0].minute, msg.payload[0].second);\ntimerDate.setMilliseconds(0);\n\ndiffDate = new Date(timerDate - currentDate);\n\nif(msg.payload[0].hour == 1) hourStr = \" Stunde, \";\nelse hourStr = \" Stunden, \";\n\nif(msg.payload[0].minute == 1) minuteStr = \" Minute und \";\nelse minuteStr = \" Minuten und \";\n\nif(msg.payload[0].second == 1) secondStr = \" Sekunde.\";\nelse secondStr = \" Sekunden.\";\n\nreturn msg = {notification: \"Nächster Timer in \" + diffDate.getHours() + hourStr + diffDate.getMinutes() + minuteStr + diffDate.getSeconds() + secondStr};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "var currentDate;\nvar timerDate;\nvar diffDate;",
+        "finalize": "",
+        "x": 1520,
+        "y": 340,
+        "wires": [
+            [
+                "5856d35f.4b1d94",
+                "5e97ba59.6c7b94"
+            ]
+        ]
+    },
+    {
+        "id": "e1b84d37.76c65",
+        "type": "websocket in",
+        "z": "f6f2187d.f17ca8",
+        "name": "rhasspy in",
+        "server": "5999adec.e962a4",
+        "client": "",
+        "x": 140,
+        "y": 460,
+        "wires": [
+            [
+                "2b276f44.63745",
+                "9c24f166.0b50e"
+            ]
+        ]
+    },
+    {
+        "id": "e55ac054.bec59",
+        "type": "http request",
+        "z": "f6f2187d.f17ca8",
+        "name": "TTS",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://pi4-2:12101/api/text-to-speech",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 1910,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5e97ba59.6c7b94",
+        "type": "change",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "notification",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1730,
+        "y": 440,
+        "wires": [
+            [
+                "e55ac054.bec59"
+            ]
+        ]
+    },
+    {
+        "id": "9c24f166.0b50e",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 400,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "b97bc1b.c9f854",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "func": "\nreturn {payload: \"Timer abgelaufen\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1820,
+        "y": 400,
+        "wires": [
+            [
+                "e55ac054.bec59"
+            ]
+        ]
+    },
+    {
+        "id": "80276a89.9a72b8",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "func": "\nreturn {payload: \"ALARM\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 2040,
+        "y": 400,
+        "wires": [
+            [
+                "e55ac054.bec59"
+            ]
+        ]
+    }
+]
