@@ -16,6 +16,8 @@ parent: Custom Intents
 
 # Controlling the light
 
+Our VA should have the ability to turn the lights on and off whenever the user tells it to. For the VA to do that, your light fixtures need to use ZigBee compatible light bulbs. You can find a brief intro on how ZigBee and other protocols needed for this skill along with resources [here](./glossary.md).
+
 ## Flow features
 
 - Turn the lights on and off

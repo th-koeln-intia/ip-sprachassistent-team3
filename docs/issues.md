@@ -90,3 +90,39 @@ Press CTRL + X and then Y and hit enter to save the file.
 ## The Raspberry Pi 3 is too weak for the amount of tasks we want it to perform
 
 We worked on this project with a Pi 3b which only has 1 GB RAM and a CPU that doesn't have enough power to handle the amount of training data we are feeding it for all of the skills we want it to have. While it does train (although taking a lot of time), its response time averages around one to two minutes. Naturally, a VA should not take longer than a few seconds to respond. We therefore recommend using a newer model Raspberry Pi depending on the number of tasks and amount of data you want it to deal with. We realized this problem after training our Pi with all German city names so it could get their weather forecasts.
+
+## With Rasa as intent recognition numbers are not presented as numerical values in the intent JSON
+
+While we need them to be passed like this,
+
+BILD
+
+they currently look like this:
+
+BILD
+
+The Rhasspy Rasa NLU Hermes service is configured via start arguments. These start arguments are read from the supervisord.conf in the rhasspy profile directory.
+
+BILD
+
+Unfortunately, we were not able to achieve our wanted results by [adjusting them](https://github.com/rhasspy/rhasspy-rasa-nlu-hermes). The child entity values was always set on unknown.
+
+### We have tried the following fixes
+
+#### Using the newest version of Rasa available (2.2.5)
+
+- The Rasa we have running on our Pi is a custom patch/image of version 1.10.20 since Rasa is not available for ARM (see [Rasa does not run on ARM](https://ip-team3.intia.de/issues.html#rasa-does-not-run-on-arm))
+
+- Unsuccessful
+
+#### Changing of the Rasa pipelines
+
+- Unsuccessful
+
+#### Using another intent recognition
+
+By using FuzzyWuzzy, we were able to achieve the wanted intent values.
+
+BILD
+
+The intent JSON contained the written version as well as the numerical value of the number. The question of whether a switch to another NLU in general was possible, remained.

@@ -1,10 +1,10 @@
 ---
 layout: default
 title: Conclusion
-nav_order: 2
+nav_order: 3
 parent: Usability
 ---
 
 # Conclusion
 
-A conclusion on how suitable
+<!-- A conclusion on how suitable -->
