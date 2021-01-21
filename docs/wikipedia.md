@@ -50,7 +50,7 @@ We want our VA to be able to answer questions that the user might have on any gi
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 720,
+        "x": 740,
         "y": 320,
         "wires": [
             [
@@ -94,7 +94,7 @@ We want our VA to be able to answer questions that the user might have on any gi
         "y": 240,
         "wires": [
             [
-                "e0245599.6858d8"
+                "6d0b00ee.69d4d8"
             ]
         ]
     },
@@ -139,11 +139,11 @@ We want our VA to be able to answer questions that the user might have on any gi
         ]
     },
     {
-        "id": "e0245599.6858d8",
+        "id": "6d0b00ee.69d4d8",
         "type": "function",
         "z": "3d7b9f59.962538",
-        "name": "Wikipedia URL Creat",
-        "func": "msg = {url: \"https://de.wikipedia.org/api/rest_v1/page/summary/\" + msg.slots.topic.replace(/\\b\\w/g, l => l.toUpperCase())}\nreturn msg;",
+        "name": "Wikipedia URL Create",
+        "func": "word = msg.slots.topic\nwords = word.split(\" \");\nmsg = {payload: words.length}\nfor(i = 0; i < words.length; i++) {\n    words[i] = words[i][0].toUpperCase() + words[i].substr(1);\n}\nmsg = {url: \"https://de.wikipedia.org/api/rest_v1/page/summary/\" + words.join(\" \")}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
