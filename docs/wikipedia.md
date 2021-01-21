@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Listening to the radio
+title: Getting information
 nav_order: 7
 parent: Custom Intents
 ---
