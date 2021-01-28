@@ -16,7 +16,7 @@ parent: Custom Intents
 
 # The newest Covid-19 news
 
-At the time of our development, the Covid-19 pandemic still has control over our day to day lives. So to adapt to current needs, we have decided to implement an [API by the RKI](https://npgeo-corona-npgeo-de.hub.arcgis.com/) that enables the user to ask our VA for updates specifically regarding Covid-19. All information is provided separately for the states and districts.
+At the time of our development, the Covid-19 pandemic still has control over our day to day lives. To adapt to current needs, we have decided to implement an [API by the RKI](https://npgeo-corona-npgeo-de.hub.arcgis.com/) that enables the user to ask our VA for updates specifically regarding Covid-19. All information is provided for states and districts separately.
 
 ## Flow features
 
@@ -27,6 +27,8 @@ At the time of our development, the Covid-19 pandemic still has control over our
 - Ask for the total death toll
 
 - Ask for the death toll of the last seven days
+
+## Intents
 
 ## Complete flow
 

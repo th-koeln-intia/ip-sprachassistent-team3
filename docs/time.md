@@ -18,6 +18,8 @@ parent: Custom Intents
 
 One of the most basic skills a VA should have is to tell you what time it is. Here is how.
 
+## Intents
+
 ## Complete flow
 
 ![flowimage](../assets/flow_time.png)

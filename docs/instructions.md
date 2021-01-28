@@ -20,11 +20,11 @@ parent: Setup
 
 In order to install Raspbian OS, you will have to download the latest version of [Raspberry Pi Imager](https://www.raspberrypi.org/software/).
 
- After downloading Raspberry Pi Imager, select Raspbian Lite Buster as your OS, select your SD card and press write to start flashing your SD card.
+ After downloading Raspberry Pi Imager, select ``Raspberry Pi OS Lite`` as your Operating System, select your SD card and press write to start flashing your SD card.
 
  ![PI1](../assets/raspberry1.png)
- 
- After flashing your SD card, you should see two partitions, one of which is named boot. Note that you might have to etract and reinsert the SD card in case the part Create a file called ssh to enable ssh daemon on boot.
+
+ After flashing your SD card, you should see two partitions, one of which is named boot. Note that you might have to extract and reinsert the SD card in case the partition does not show up immediately. Create a file called ssh to enable ssh daemon on boot.
 
  ```shell
 cd /media/<yourname>/boot/ # change directory to boot partition
@@ -46,18 +46,40 @@ update_config=1
 country=DE
 
 network={
-    ssid="<your wlan name>"
-    psk="<your wlan password>"
+    ssid="<Your WLAN name>"
+    psk="<Your WLAN password>"
 }
 ```
 
+Note that you might need to change the country code accordingly.
+
 Press CTRL + X and then Y and hit enter to save the file.
 
-Your directory should look like this:
+You should now see two new files, ssh and called wpfa_supplicant.conf, in your boot partition:
 
  ![PI4](../assets/raspberry4.png)
 
  Insert the SD card into your Pi and turn it on.
+ Since we decided on a headless approach to using the Pi, you will need to access the Pi via SSH from this point on. For this, you will need to know the IP address of your Pi and a SSH client of some sort installed on your PC.
+
+ ```shell
+ ssh pi@<IP address of your Pi>
+ ```
+
+ Now that you have accessed your Pi, it is good practise to bring it up to date with the following commands.
+
+ ```shell
+ sudo apt update 
+ sudo apt full-upgrade 
+ ```
+
+## Additional software
+
+In order to clone repositories, which will be necessary often during development of our VA, you need to install Git onto your Pi.
+
+```shell
+sudo apt install git
+```
 
 ## Installing the microphone driver
 
@@ -66,6 +88,40 @@ git clone https://github.com/respeaker/seeed-voicecard.git
 cd seeed-voicecard
 sudo ./install.sh
 sudo reboot
+```
+
+This might take a while so do not be surprised.
+
+After the Pi reboots, you need to edit the asound.conf. You access it via 
+
+```shell
+sudo nano /etc/asound.conf
+```
+
+Comment everything out starting from ``pcm.!default`` up to its last curly bracket by using #. Then, you add the following below it.
+
+```shell
+pcm.!default {
+ type pulse
+ # If defaults.namehint.showall is set to off in alsa.conf, then this is
+ # necessary to make this pcm show up in the list returned by
+ # snd_device_name_hint or aplay -L
+ hint.description "Default Audio Device"
+}
+ctl.!default {
+ type pulse
+}
+```
+
+Lastly, you need to set the 3.5 mm jack as the default output. Do the following.
+
+```shell
+sudo raspi-config
+
+Select Advanced Options
+Select Audio
+Select Force 3.5mm ('headphone') jack
+Select Finish
 ```
 
 ## Installing the Docker Containers
@@ -156,15 +212,19 @@ rasa:
 docker-compose up -d # starts the container
 ```
 
-If you get this output, you have been successful in setting up Rasa. <!-- If it tells you it is done with creating rasa, you have been successful -->
+If it tells you it is done with creating Rasa, you have been successful.
 
 ## Configuring Rhasspy
 
-You can reach your Rhasspy site via [localhost:12101](localhost:12101) in your webbrowser.
+You can reach your Rhasspy site via [raspberrypi:12101](raspberrypi:12101) in your webbrowser. If using raspberrypi does not work, you can also use your Pi's IP address instead, like this:
+
+ ``<IP of your Pi>:12101``
 
 You need to change your Rhasspy's settings according to the picture below.
 
 ![rhasspy_settings](../assets/rhasspy_settings.png)
+
+If you have the web interface open but happen to get an error message saying ``cannot connect to localhost:5005``, check the Intent Recognition settings by clicking on the according row. A dropdown should appear. Check the Server URL and replace localhost with your Pi's IP address.  
 
 You can also use our profile.json below:
 

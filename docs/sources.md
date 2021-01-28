@@ -52,3 +52,19 @@ nav_exclude: true
 [https://nodered.org/](https://nodered.org/)
 
 [https://nodered.org/docs/user-guide/](https://nodered.org/docs/user-guide/)
+
+## Radio
+
+[https://gist.github.com/Peter2hhw/a7f16a3f276ac5cb51e5c760572afd8e](https://gist.github.com/Peter2hhw/a7f16a3f276ac5cb51e5c760572afd8e)
+
+[https://www.instructables.com/Internet-Radio-Radio-Recorder-and-MP3-Player-With-/](https://www.instructables.com/Internet-Radio-Radio-Recorder-and-MP3-Player-With-/)
+
+[https://forum-raspberrypi.de/forum/thread/326-music-player-daemon-mpd-und-mpc-auf-dem-raspberry-pi/](https://forum-raspberrypi.de/forum/thread/326-music-player-daemon-mpd-und-mpc-auf-dem-raspberry-pi/)
+
+[https://flows.nodered.org/node/node-red-contrib-mpd](https://flows.nodered.org/node/node-red-contrib-mpd)
+
+[https://funprojects.blog/tag/internet-radio/](https://funprojects.blog/tag/internet-radio/)
+
+[https://www.musicpd.org/doc/html/index.html](https://www.musicpd.org/doc/html/index.html)
+
+[https://www.chip.de/artikel/Webradio-Live-Stream-Alle-Sender-im-ueberblick_139924359.html](https://www.chip.de/artikel/Webradio-Live-Stream-Alle-Sender-im-ueberblick_139924359.html)
