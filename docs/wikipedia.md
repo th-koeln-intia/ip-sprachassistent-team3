@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Getting information
-nav_order: 7
+title: Using Wikipedia
+nav_order: 8
 parent: Custom Intents
 ---
 
@@ -14,13 +14,15 @@ parent: Custom Intents
 {:toc}
 </details>
 
-# Getting information
+# Using Wikipedia
 
 We want our VA to be able to answer questions that the user might have on any given topic. For this, we have decided on using this [Wikipedia API](https://de.wikipedia.org/api/rest_v1/page/summary/).
 
 ## Flow features
 
 - Request information regarding any topic that is available on Wikipedia
+
+## Intents
 
 ## Complete flow
 

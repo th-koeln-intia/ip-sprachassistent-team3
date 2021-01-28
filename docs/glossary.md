@@ -4,6 +4,10 @@ layout : default
 
 # Glossary
 
+## Voice Assistant (VA)
+
+A voice assistant is a digital assistant that uses voice recognition, speech synthesis, and natural language processing (NLP) to provide a service through a particular application.
+
 ## Docker
 
 - similar to a VM in that it emulates an OS

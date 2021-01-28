@@ -17,7 +17,7 @@ parent: Usability
 
 # Issues
 
-Here, we will compile and document the issues we have run into during the development of our voice assistant. 
+Here, we will compile and document the issues we have run into during the development of our voice assistant.  
 
 ## Rasa does not run on ARM
 

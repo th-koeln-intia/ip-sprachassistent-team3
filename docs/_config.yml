@@ -60,14 +60,14 @@ search:
   preview_words_before: 5
   # Maximum amount of words to display after a matched word in the preview
   # Default: 10
-  preview_words_after: 10
+  preview_words_after: 5
   # Set the search token separator
   # Default: /[\s\-/]+/
   # Example: enable support for hyphenated search words
   tokenizer_separator: /[\s/]+/
   # Display the relative url in search results
   # Supports true (default) or false
-  rel_url: true
+  rel_url: false
   # Enable or disable the search button that appears in the bottom right corner of every page
   # Supports true or false (default)
   button: false

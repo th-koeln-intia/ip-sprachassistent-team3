@@ -22,6 +22,8 @@ You will need to register on their [website](https://openweathermap.org/) for a 
 
 The only "downside" to this API is that it demands longitude and latitude coordinates as input instead of a city name. This is not exactly user friendly for a spoken command. In order to solve this, we employ another [API for Geocoding](https://developer.mapquest.com/). This API is responsible for converting the name of a given city from the voice command into its corresponding coordinates which can then be relayed to our Openweather API.
 
+## Intents
+
 ## Flow features
 
 - The current temperature in a specific city, humidity and details regarding whether it is sunny or cloudy

@@ -78,12 +78,13 @@ In order to control the mpd via voice command, you will need to install its resp
 
 Music Player Daemon offers an array of functionalities and commands, but since we cannot go into depth about all of them, here is a link to their [documentation](https://www.musicpd.org/doc/html/protocol.html).
 
-<!--- >
+## Intents
+
 ## Troubleshooting
 
-If the player is correctly running, but no sound comes from your Pi, it is worth a shot to open your ```alsa.conf``` file and clarify the de
+If the player is correctly running, but no sound comes from your Pi, it is worth a shot to open your ```alsa.conf``` file and check whether you have correctly followed our instructions for the sound settings [here](./instructions.md#installingthemicrophonedriver).
 
--->
+If you are curious as to what sources and tutorials we worked with, you can find them [here](./sources.md#radio).
 
 ## Complete flow
 

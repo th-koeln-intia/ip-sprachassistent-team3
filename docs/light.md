@@ -26,6 +26,8 @@ Our VA should have the ability to turn the lights on and off whenever the user t
 - Control the light in different rooms
 - Feedback on success
 
+## Intents
+
 ## Complete flow
 
 ![flowimage](../assets/flow_light.png)
