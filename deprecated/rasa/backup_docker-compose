@@ -1,0 +1,10 @@
+rasa:
+    image: "koenvervloesem/rasa:latest" # name of the used unofficial image
+    container_name: rasa
+    restart: unless-stopped
+    volumes:
+        - "/home/pi/rasa/bin:/app"
+        - "/home/pi/rhasspy/.config/rhasspy/profiles:/profiles"
+    ports:
+        - "5005:5005"
+    command: run --enable-api --debug --user root

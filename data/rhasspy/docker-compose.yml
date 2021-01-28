@@ -1,0 +1,13 @@
+rhasspy: # service name
+    image: "rhasspy/rhasspy" # use rhasspy docker image
+    container_name: rhasspy # name of our container
+    restart: unless-stopped # automatically restarts container if crashed
+    volumes: # map volumes on your Pi as shared volume in the container
+        - "$HOME/rhasspy/.config/rhasspy/profiles:/profiles"
+        - "/etc/localtime:/etc/localtime:ro"
+    ports: # open the required ports
+        - "12101:12101" # webserver
+        - "12183:12183" # MQTT server
+    devices:
+        - "/dev/snd:/dev/snd" # connect mic to docker container
+    command: --user-profiles /profiles --profile de # start rhasspy with custom commands
