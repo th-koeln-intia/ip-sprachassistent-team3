@@ -6,4 +6,17 @@ Part of the expected end results include the user being able to switch on/off a 
 
 You can find our extensive documentation [here](https://ip-team3.intia.de/).
 
+# Short structure overview
 
+ - The data folder includes all our docker-compose files, config files and more
+ - The deprecated folder includes our data files for rasa which we did not use anymore in the end. The reason why can be found [here](https://ip-team3.intia.de/issues.html#rasa-does-not-run-on-arm)
+ - The docs folder includes our files for the [documentation](https://ip-team3.intia.de/)
+
+# Direct links to config files
+
+ - [Node-Red docker-compose file](https://github.com/th-koeln-intia/ip-sprachassistent-team3/blob/master/data/node-red/docker-compose.yml)
+	 - [Node-Red flows](https://github.com/th-koeln-intia/ip-sprachassistent-team3/blob/master/data/node-red/data/flows.json)
+ - [Rhasspy docker-compose file](https://github.com/th-koeln-intia/ip-sprachassistent-team3/blob/master/data/rhasspy/docker-compose.yml)
+	 - [Rhasspy Slots](https://github.com/th-koeln-intia/ip-sprachassistent-team3/tree/master/data/rhasspy/.config/rhasspy/profiles/de/slots)
+	 - [Rhasspy intents](https://github.com/th-koeln-intia/ip-sprachassistent-team3/blob/master/data/rhasspy/.config/rhasspy/profiles/de/sentences.ini)
+ - [Zigbee2mqtt docker-compose file](https://github.com/th-koeln-intia/ip-sprachassistent-team3/blob/master/data/zigbee2mqtt/docker-compose.yml)
