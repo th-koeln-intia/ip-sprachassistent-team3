@@ -28,7 +28,9 @@ At the time of our development, the Covid-19 pandemic still has control over our
 
 - Ask for the death toll of the last seven days
 
-## Intents
+## Example command
+
+"Apollo, wie sehen die Corona Zahlen aus?"
 
 ## Complete flow
 

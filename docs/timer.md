@@ -20,7 +20,9 @@ We want our VA to be able to set a timer for the time span given in the user's c
 
 After setting up your SQLite database, all you need to do is install the necessary [SQLite node](https://flows.nodered.org/node/node-red-node-sqlite) for NodeRed to connect to your database. You can find the flow we have used down below or in our GitHub repsitory.
 
-## Intents
+## Example command
+
+"Apollo, stelle einen 1 Stunde 15 Minuten Timer."
 
 ## Flow features
 

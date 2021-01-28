@@ -18,7 +18,10 @@ parent: Custom Intents
 
 One of the features we want our VA to have is for the user to be able to set any number of alarms that won't be discarded even if the VA is accidentally unplugged. We decided to use SQLite for this. After setting up your SQLite database, all you need to do is install the necessary [SQLite node](https://flows.nodered.org/node/node-red-node-sqlite) for NodeRed to connect to your database. You can find the flow we have used down below or in our GitHub repsitory.
 
-## Intents
+## Example command
+
+"Apollo, stell einen Wecker für 15 Uhr."
+
 
 ## Flow features
 

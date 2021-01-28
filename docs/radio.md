@@ -78,7 +78,9 @@ In order to control the mpd via voice command, you will need to install its resp
 
 Music Player Daemon offers an array of functionalities and commands, but since we cannot go into depth about all of them, here is a link to their [documentation](https://www.musicpd.org/doc/html/protocol.html).
 
-## Intents
+## Example command
+
+"Apollo, mach das Radio an."
 
 ## Troubleshooting
 

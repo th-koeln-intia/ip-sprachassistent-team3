@@ -22,7 +22,9 @@ We want our VA to be able to answer questions that the user might have on any gi
 
 - Request information regarding any topic that is available on Wikipedia
 
-## Intents
+## Example command
+
+"Apollo, erzähl mir etwas über Angela Merkel."
 
 ## Complete flow
 

@@ -18,7 +18,9 @@ parent: Custom Intents
 
 One of the most basic skills a VA should have is to tell you what time it is. Here is how.
 
-## Intents
+## Example command
+
+"Apollo, wie viel Uhr ist es?"
 
 ## Complete flow
 
