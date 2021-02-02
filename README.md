@@ -8,9 +8,9 @@ You can find our extensive documentation [here](https://ip-team3.intia.de/).
 
 # Short structure overview
 
- - The data folder includes all our docker-compose files, config files and more
- - The deprecated folder includes our data files for rasa which we did not use anymore in the end. The reason why can be found [here](https://ip-team3.intia.de/issues.html#rasa-does-not-run-on-arm)
- - The docs folder includes our files for the [documentation](https://ip-team3.intia.de/)
+ - The data folder contains all our docker-compose files, config files and more
+ - The deprecated folder includes our data files for rasa which we ultimately did not use. The reason why can be found [here](https://ip-team3.intia.de/issues.html#rasa-does-not-run-on-arm).
+ - The docs folder conatins all of our files for the [documentation](https://ip-team3.intia.de/).
 
 # Direct links to config files
 
