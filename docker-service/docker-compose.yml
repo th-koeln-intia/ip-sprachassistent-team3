@@ -1,0 +1,45 @@
+version: '3'
+volumes:
+  z2m-vol:
+services:
+  rhasspy:
+    image: rhasspy/rhasspy
+    container_name: apollo-rhass
+    restart: unless-stopped
+    volumes:
+      - ./data/rhasspy/.config/rhasspy/profiles:/profiles
+      - /etc/localtime:/etc/localtime:ro
+    devices:
+      - /dev/snd:/dev/snd
+    network_mode: host
+    privileged: true
+    command: --user-profiles /profiles --profile de
+    environment:
+      - TZ=Europe/Berlin
+
+  zigbee2mqtt:
+    container_name: apollo-zigbee
+    image: tokkan/z2m
+    volumes:
+      - z2m-vol:/app/data
+      - /run/udev:/run/udev:ro
+    devices:
+      - /dev/ttyACM0:/dev/ttyACM0
+    restart: unless-stopped
+    network_mode: host
+    privileged: true
+    environment:
+      - TZ=Europe/Berlin
+
+  nodered:
+    image: nodered/node-red
+    container_name: apollo-node
+    restart: unless-stopped
+    volumes:
+      - ./data/nodered/data:/data
+      - ./data/nodered/sqlite:/app
+      - /etc/localtime:/etc/localtime:ro
+    network_mode: host
+    privileged: true
+    environment:
+      - TZ=Europe/Berlin
