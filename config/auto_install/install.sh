@@ -23,5 +23,6 @@ sudo mkdir ~/apollo
 sudo cp -R ~/apollo-voiceassistant/config/auto_install/. ~/apollo
 sudo rm -R ~/apollo-voiceassistant
 
+chmod 777 -R ~/apollo
 
 echo "Please reboot your pi"
