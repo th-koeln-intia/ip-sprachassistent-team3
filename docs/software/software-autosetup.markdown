@@ -39,4 +39,6 @@ cd ~/apollo
 docker-compose up -d
 ```
 
-This may take some time. After everything has been started you can access the rhasspy interface on the url <your-pi-ip>:12101 and node-red can be accessed on the url <your-pi-ip>:1880
+This may take some time. After everything has been started you can access the rhasspy interface on the url  [ip-of-your-pi]:12101 and node-red can be accessed on the url [ip-of-your-pi]:1880
+
+Zigbee devices can be connected on the webinterface at  [ip-of-your-pi]:1337
