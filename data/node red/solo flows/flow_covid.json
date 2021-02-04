@@ -1,0 +1,160 @@
+[
+    {
+        "id": "773eec76.a182c4",
+        "type": "tab",
+        "label": "Corona",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "1b7fbbb7.d3237c",
+        "type": "websocket in",
+        "z": "773eec76.a182c4",
+        "name": "rhasspy",
+        "server": "5999adec.e962a4",
+        "client": "",
+        "x": 310,
+        "y": 340,
+        "wires": [
+            [
+                "5a4ec99f.3ceb9"
+            ]
+        ]
+    },
+    {
+        "id": "5a4ec99f.3ceb9",
+        "type": "switch",
+        "z": "773eec76.a182c4",
+        "name": "check intent",
+        "property": "intent.name",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "CoronaStateInfo",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "CoronaDistrictInfo",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 450,
+        "y": 340,
+        "wires": [
+            [
+                "17611e61.3612a2"
+            ],
+            [
+                "89d69c90.b6a878"
+            ]
+        ]
+    },
+    {
+        "id": "17611e61.3612a2",
+        "type": "http request",
+        "z": "773eec76.a182c4",
+        "name": "request info from api",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/Coronaf%C3%A4lle_in_den_Bundesl%C3%A4ndern/FeatureServer/0/query?where=1%3D1&outFields=LAN_ew_GEN,Fallzahl,Death,cases7_bl,death7_bl&outSR=4326&f=json",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 660,
+        "y": 320,
+        "wires": [
+            [
+                "f06197fc.8bd28"
+            ]
+        ]
+    },
+    {
+        "id": "f06197fc.8bd28",
+        "type": "function",
+        "z": "773eec76.a182c4",
+        "name": "build tts",
+        "func": "var count=0;\nfor(i = 0; i < msg.payload.features.length; i++) {\n    if(msg.slots.state.toLowerCase() === msg.payload.features[i].attributes.LAN_ew_GEN.toLowerCase()) \n    {\n        msg.payload = \"Hier sind die Korona Informationen für das Bundesland \" + msg.slots.state + \": es gab insgesamt \" + msg.payload.features[i].attributes.Fallzahl + \" Fälle von Korona, davon sind \" + msg.payload.features[i].attributes.cases7_bl + \" in den letzten 7 Tagen aufgetreten. Gestorben sind insgesamt \" + msg.payload.features[i].attributes.Death + \" Menschen, davon \" + msg.payload.features[i].attributes.death7_bl + \" in den letzten 7 Tagen. \";\n        return msg;\n    }\n}\nmsg.payload = \"Fehler\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 840,
+        "y": 320,
+        "wires": [
+            [
+                "d60d8536.186d98"
+            ]
+        ]
+    },
+    {
+        "id": "c7251ce9.cdb608",
+        "type": "function",
+        "z": "773eec76.a182c4",
+        "name": "build tts",
+        "func": "for(i = 0; i < msg.payload.features.length; i++) {\n    if(msg.slots.district.toLowerCase() === msg.payload.features[i].attributes.GEN.toLowerCase()) \n    {\n        msg.payload = \"Hier sind die Korona Informationen für den Landkreis \" + msg.slots.district + \": es gab insgesamt \" + msg.payload.features[i].attributes.cases + \" Fälle von Korona, davon sind \" + msg.payload.features[i].attributes.cases7_lk + \" in den letzten 7 Tagen aufgetreten. Gestorben sind insgesamt \" + msg.payload.features[i].attributes.deaths + \" Menschen, davon \" + msg.payload.features[i].attributes.death7_lk + \" in den letzten 7 Tagen. Die 7 Tage Inzidenz liegt bei \" + msg.payload.features[i].attributes.cases7_per_100k_txt;\n        return msg;\n        \n    }\n}\nmsg.payload = \"Fehler\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 840,
+        "y": 360,
+        "wires": [
+            [
+                "d60d8536.186d98"
+            ]
+        ]
+    },
+    {
+        "id": "d60d8536.186d98",
+        "type": "http request",
+        "z": "773eec76.a182c4",
+        "name": "TTS",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://192.168.0.177:12101/api/text-to-speech",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 990,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "89d69c90.b6a878",
+        "type": "http request",
+        "z": "773eec76.a182c4",
+        "name": "request info from api",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_Landkreisdaten/FeatureServer/0/query?outFields=*&where=%20(BEZ%20%3D%20'Landkreis'%20OR%20BEZ%20%3D%20'Kreis'%20OR%20BEZ%20%3D%20'Kreisfreie%20Stadt'%20OR%20BEZ%20%3D%20'Bezirk')%20&f=json",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 660,
+        "y": 360,
+        "wires": [
+            [
+                "c7251ce9.cdb608"
+            ]
+        ]
+    },
+    {
+        "id": "5999adec.e962a4",
+        "type": "websocket-listener",
+        "path": "ws://192.168.0.177:12101/api/events/intent",
+        "wholemsg": "true"
+    }
+]

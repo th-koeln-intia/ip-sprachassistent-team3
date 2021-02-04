@@ -1,0 +1,1 @@
+docker run -it -v "$(pwd):/app" -p 5005:5005 koenvervloesem/rasa:latest init

@@ -1,0 +1,10 @@
+homeassistant: false
+permit_join: false
+mqtt:
+  base_topic: zigbee2mqtt
+  server: 'mqtt://localhost:12183'
+serial:
+  port: /dev/ttyACM0
+devices:
+  '0x00158d000520ac5e':
+    friendly_name: '0x00158d000520ac5e'

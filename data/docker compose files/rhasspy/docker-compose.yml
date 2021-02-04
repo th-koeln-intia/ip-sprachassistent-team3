@@ -1,0 +1,13 @@
+rhasspy: # service name
+    image: "rhasspy/rhasspy" 
+    container_name: rhasspy 
+    restart: unless-stopped 
+    volumes: 
+        - "$HOME/rhasspy/.config/rhasspy/profiles:/profiles"
+        - "/etc/localtime:/etc/localtime:ro"
+    ports: 
+        - "12101:12101" # webserver
+        - "12183:12183" # MQTT server
+    devices:
+        - "/dev/snd:/dev/snd" # connect mic to docker container
+    command: --user-profiles /profiles --profile de
