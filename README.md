@@ -4,7 +4,7 @@ This project was started as part of [INTIA](https://dites.web.th-koeln.de/forsch
 
 Start by reading the documentation for this project [here](https://ip-team3.intia.de/).
 
-Configuration files are available [here](https://github.com/th-koeln-intia/ip-sprachassistent-team3/tree/master/data).
+Configuration files are available [here](https://github.com/th-koeln-intia/ip-sprachassistent-team3/tree/master/config%20files).
 - Docker files
 	- [Rhasspy](https://github.com/th-koeln-intia/ip-sprachassistent-team3/tree/master/data/docker%20compose%20files/rhasspy)
 	- [Node-RED](https://github.com/th-koeln-intia/ip-sprachassistent-team3/tree/master/data/docker%20compose%20files/node%20red)
