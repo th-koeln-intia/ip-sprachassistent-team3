@@ -16,6 +16,8 @@ parent: Software
 
 # Installation using our Installscript
 
+This script implements everything covered in the [skill implementation](../skills/intro/skill-intro.html){:target="_blank"} section. Before running this script install your Pi according to the hardware [page](../hardware/hardware-setup.html){:target="_blank"}.
+
 Do not run the script as root or with sudo!
 
 ```shell
@@ -24,21 +26,21 @@ chmod 777 install.sh
 ./install.sh
 ```
 
-If you are asked if you want to continue, enter y to confirm and press Agreeable_Nightcrawler
+If you are asked to continue, enter ```y``` and hit ```enter```.
 
-After the installscript has completed you have to reboot your pi once
+After the install script has completed you have to reboot your pi.
 
 ```shell
 sudo reboot
 ```
 
-After the Pi has rebooted you can start Apollo with the following commands
+Apollo can be started after the reboot by using the following commands.
 
 ```shell
 cd ~/apollo
 docker-compose up -d
 ```
 
-This may take some time. After everything has been started you can access the rhasspy interface on the url  [ip-of-your-pi]:12101 and node-red can be accessed on the url [ip-of-your-pi]:1880
+This may take some time. After everything has been started you can access the Rhasspy's interface at ```pi's-ip:12101```. Node-RED can be accessed at ```pi's-ip:1880```.
 
-Zigbee devices can be connected on the webinterface at  [ip-of-your-pi]:1337
+ZigBee devices can be connected using the web interface available ```pi's-ip:1337```.
