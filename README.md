@@ -1,6 +1,4 @@
-# Apollo
-
-<img src="https://github.com/th-koeln-intia/ip-sprachassistent-team3/blob/master/docs/img/logo.png" style="max-width: 100%;"/>
+<img src="https://github.com/th-koeln-intia/ip-sprachassistent-team3/blob/master/docs/img/logo2.png" style="max-width: 100%;"/>
 
 This project was started as part of [INTIA](https://dites.web.th-koeln.de/forschung/projekte/intia/) and aims to introduce social facilities and other public institutions to methods and technologies regarding disability and educational assistance. Goal of this project was to create a offline voice assistant using open source technologies and highlight possible usability  and limitations of used technologies.
 
