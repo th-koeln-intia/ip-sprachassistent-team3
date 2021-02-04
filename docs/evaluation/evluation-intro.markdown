@@ -24,13 +24,15 @@ Implementing the voice assistant from scratch required technical expertise and e
 # Technology evaluation
 
 
-Criteria used for this evaluation:
+| Description         |  Technology  | Performance   |      Efficiency         | Consistency    | Reliability    |
+| :---                | :---         |     :----:    |          :---:          | :---:          |    :---:      |
+| Wakeword            | PocketSphinx |     poor      |     poor                |     poor       |   poor        |
+| Speech To Text      | PocketSphinx |      good     |           good          |  good          |    good       |
+| Text To Speech      | NanoTTS      |     poor      |      average            |   good         |    average    |
+| Dialogue Management | Rhasspy      |       good    |          good           |        good    |      good     |
+| Intent Recognition  | Fsticuffs    |      good     |          good           |       good     |   good        |
 
-- performance
-- efficiency 
-- consistency
-- controllability 
-- learnability
+
 
 ## Wake Word: Pocketsphinx
 
