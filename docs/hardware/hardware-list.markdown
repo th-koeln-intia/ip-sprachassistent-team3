@@ -14,7 +14,7 @@ parent: Hardware
 </details>
 
 # Required hardware
-Hardware required for following this guide:
+Hardware requirements for following this documentation.
 
 ## Raspberry Pi 
 This project started on a Raspberry Pi 3 Model B+ with 1GB of Ram. Although functionality can be achieved using a Raspberry Pi 3, overheating and long processing times (crashes included) are no rarity. It is highly recommended to use a newer Model with at least 4GB of Ram. Most raspberry pies are shipped without a power supply. 

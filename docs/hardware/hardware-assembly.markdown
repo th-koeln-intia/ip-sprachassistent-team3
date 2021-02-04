@@ -44,7 +44,7 @@ network={
 Press CTRL + x followed by y and then hit enter to save all changes.
 
 ### SSH
-You can access the command line of a Raspberry Pi remotely from another computer or device on the same network using SSH. For headless setup, SSH can be enabled by placing a file named ```ssh```, without any extension, onto the boot partition of the SD card. 
+You can access the command line of a Raspberry Pi remotely from another computer or device on the same network using SSH. For headless setup, SSH can be enabled by placing a file named ```ssh```, without any extension, inside the boot directory on the SD card. 
 
 ## Assembling Hardware 
 

@@ -19,7 +19,7 @@ has_toc: true
 
 ## Rhasspy technology stack
 
-Find below the technology stack used for the upcoming Rhasspy configuration. One of the goals for this project was to evaluate usability of said technology stack. Evaluation results can be found [here](/evaluation/evaluation-rhasspy.html){:target="_blank"}.
+Find below the technology stack used for the upcoming Rhasspy configuration. One of the goals for this project was to evaluate usability of said technology stack. Evaluation results can be found [here](/evaluation/evluation-intro.html){:target="_blank"}.
 
 - Wake Word: Pocketsphinx
 - Speech to Text: Pocketsphinx
