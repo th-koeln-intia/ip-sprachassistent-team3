@@ -1,6 +1,6 @@
 # Apollo
 
-This project was started as part of [INTIA](https://dites.web.th-koeln.de/forschung/projekte/intia/) and aims to introduce social facilities and other public institutions to methods and technologies regarding disability and educational assistance. Goal of this project was to create a offline voice assist using open source technologies and highlight possible usability  and limitations of used technologies.
+This project was started as part of [INTIA](https://dites.web.th-koeln.de/forschung/projekte/intia/) and aims to introduce social facilities and other public institutions to methods and technologies regarding disability and educational assistance. Goal of this project was to create a offline voice assistant using open source technologies and highlight possible usability  and limitations of used technologies.
 
 Start by reading the documentation for this project [here](https://ip-team3.intia.de/).
 
