@@ -9,7 +9,7 @@ Configuration files are available [here](https://github.com/th-koeln-intia/ip-sp
 	- [Rhasspy](https://github.com/th-koeln-intia/ip-sprachassistent-team3/tree/master/data/docker-compose-files/rhasspy)
 	- [Node-RED](https://github.com/th-koeln-intia/ip-sprachassistent-team3/tree/master/data/docker-compose-files/node-red)
 	- [ZigBee2MQTT](https://github.com/th-koeln-intia/ip-sprachassistent-team3/tree/master/data/docker-compose-files/zigbee2mqtt)
-	- [Rasa](https://github.com/th-koeln-intia/ip-sprachassistent-team3/tree/master/data/docker-compose-files/rasa(deprecated)) (deprecated)
+	- [Rasa](https://github.com/th-koeln-intia/ip-sprachassistent-team3/tree/master/data/docker-compose-files/rasa(deprecated))(deprecated)
 - Config files 
 - Documentation files
 
