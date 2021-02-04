@@ -13,7 +13,7 @@ Configuration files are available [here](https://github.com/th-koeln-intia/ip-sp
 - Config files 
 - Documentation files
 
-# Skills implemented in this project
+## Skills implemented in this project
 
 - Light Control
 - Current Time
@@ -22,3 +22,13 @@ Configuration files are available [here](https://github.com/th-koeln-intia/ip-sp
 - Wikipedia
 - Radio Station
 - Alarm & Timer
+
+### Dokumentation
+The documentation is created in form of GitHub pages following the official documentation:  
+[installation guide](https://docs.github.com/en/github/working-with-github-pages/creating-a-github-pages-site-with-jekyll)
+
+To run the documentation locally Jekyll is required. Follow the official installation [guide](https://jekyllrb.com/docs/installation/) to install Jekyll for the appropriate OS. It is important to install the correct version to prevent potential problems with Github Pages. The officially supported version is listed [here](https://pages.github.com/versions/).  
+The following command starts a local server, if Jekyll is installed with bundler:
+```bash 
+bundle exec jekyll serve
+```
