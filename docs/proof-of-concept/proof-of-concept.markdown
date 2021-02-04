@@ -2,7 +2,6 @@
 layout: default
 title: Proof of concept
 nav_order: 6
-has_toc: true
 ---
 <details closed markdown="block">
   <summary>
