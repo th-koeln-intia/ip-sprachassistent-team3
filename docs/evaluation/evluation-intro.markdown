@@ -13,9 +13,22 @@ has_toc: true
 {:toc}
 </details>
 
+This page covers the evaluation for this project's technology and over all usability of the voice assistant. The intent recognition was switched during the project. Find the evaluation for Rasa [here](../legacy-content/legacy-rasa-implementation.html){:target="_blank"}. Implementation of the upcoming technologies was uncomplicated, since Rhasspy comes with everything included.
+
+# Voice assistant usability
+
+Implementing the voice assistant from scratch required technical expertise and experience in debian derived environments. There are no limits when it comes to customization as long as required knowledge is present. The voice assistant itself can be considered a niche product. It can be used for certain use cases regarding social facilities and other public institutions. We would like to underline that the voice assistant is not a jack of all trades, but can be used efficiently when it comes to areas of interest.
+
 # Technology evaluation
 
-This page covers the evaluation for this project's technology stack. The intent recognition was switched during the project. Find the evaluation for Rasa [here](../legacy-content/legacy-rasa-implementation.html){:target="_blank"}. Implementation of the upcoming technologies was uncomplicated, since Rhasspy comes with everything included.
+
+Criteria used for this evaluation:
+
+- performance
+- efficiency 
+- consistency
+- controllability 
+- learnability
 
 ## Wake Word: Pocketsphinx
 
