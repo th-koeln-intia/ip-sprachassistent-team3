@@ -19,7 +19,9 @@ git clone https://github.com/th-koeln-intia/ip-sprachassistent-team3.git ~/apoll
 sudo cp ~/apollo-voiceassistant/config/auto_install/data/radiostations.m3u /var/lib/mpd/playlists/radiostations.m3u
 sudo chmod 777 /var/lib/mpd/playlists/radiostations.m3u
 
-sudo cp ~/apollo-voiceassistant/config/auto_install/. ~/apollo
+sudo mkdir ~/apollo
+sudo cp -R ~/apollo-voiceassistant/config/auto_install/. ~/apollo
 sudo rm -R ~/apollo-voiceassistant
+
 
 echo "Please reboot your pi"
