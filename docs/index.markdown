@@ -6,7 +6,7 @@ nav_order: 1
 
 # Apollo offline voice assistant
 
-<img src="img/homespace.jpg" style="max-width: 70%;"/>
+<img src="img/homespace.jpg" style="max-width: 100%;"/>
 
 ## Introduction
 The following documentation provides a thorough guide on how to setup your personal offline voice assistant built upon the [rhasspy project](https://rhasspy.readthedocs.io/en/latest/){:target="_blank"}.
