@@ -41,5 +41,6 @@ services:
       - /etc/localtime:/etc/localtime:ro
     network_mode: host
     privileged: true
+    user: root:root
     environment:
       - TZ=Europe/Berlin
