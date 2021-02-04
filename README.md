@@ -23,7 +23,7 @@ Configuration files are available [here](https://github.com/th-koeln-intia/ip-sp
 - Radio Station
 - Alarm & Timer
 
-### Documentation
+### Documentation 
 The documentation is created in form of GitHub pages following the official documentation:  
 [installation guide](https://docs.github.com/en/github/working-with-github-pages/creating-a-github-pages-site-with-jekyll)
 
