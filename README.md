@@ -6,10 +6,10 @@ Start by reading the documentation for this project [here](https://ip-team3.inti
 
 Configuration files are available [here](https://github.com/th-koeln-intia/ip-sprachassistent-team3/tree/master/config).
 - Docker files
-	- [Rhasspy](https://github.com/th-koeln-intia/ip-sprachassistent-team3/tree/master/data/docker-compose-files/rhasspy)
-	- [Node-RED](https://github.com/th-koeln-intia/ip-sprachassistent-team3/tree/master/data/docker-compose-files/node-red)
-	- [ZigBee2MQTT](https://github.com/th-koeln-intia/ip-sprachassistent-team3/tree/master/data/docker-compose-files/zigbee2mqtt)
-	- [Rasa](https://github.com/th-koeln-intia/ip-sprachassistent-team3/tree/master/data/docker-compose-files/rasa(deprecated))(deprecated)
+	- [Rhasspy](https://github.com/th-koeln-intia/ip-sprachassistent-team3/tree/master/config/docker-compose-files/rhasspy)
+	- [Node-RED](https://github.com/th-koeln-intia/ip-sprachassistent-team3/tree/master/config/docker-compose-files/node-red)
+	- [ZigBee2MQTT](https://github.com/th-koeln-intia/ip-sprachassistent-team3/tree/master/config/docker-compose-files/zigbee2mqtt)
+	- [Rasa](https://github.com/th-koeln-intia/ip-sprachassistent-team3/tree/master/config/docker-compose-files/rasa(deprecated))
 - Config files 
 - Documentation files
 
