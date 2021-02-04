@@ -1,7 +1,7 @@
 ---
 layout: default
 parent: Skills
-title: Alarm & Timer
+title: Alarm & timer
 nav_order: 9
 has_toc: true
 ---
