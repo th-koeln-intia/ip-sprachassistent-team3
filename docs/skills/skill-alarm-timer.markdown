@@ -69,7 +69,7 @@ Alarm and timer information is stored inside a sql lite database file called ```
 cd /home/pi/node-red/data
 mkdir sqllite
 cd sqllite
-wget wget https://github.com/th-koeln-intia/ip-sprachassistent-team3/raw/master/data/node-red/sqlite/timer.db
+wget wget https://github.com/th-koeln-intia/ip-sprachassistent-team3/raw/master/data/node%20red/sqllite/timer.db
 ```
 
 ### Node-RED flow creation
