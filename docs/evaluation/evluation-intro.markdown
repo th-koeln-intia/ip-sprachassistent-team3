@@ -3,8 +3,15 @@ layout: default
 title: Evaluation
 nav_order: 5
 has_toc: true
-has_children: true
 ---
+<details closed markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
 
 # Technology evaluation
 
