@@ -12,11 +12,11 @@ nav_order: 1
 The following documentation provides a thorough guide on how to setup your personal offline voice assistant built upon the [rhasspy project](https://rhasspy.readthedocs.io/en/latest/){:target="_blank"}.
 
 ## Language notice
-Voice commands in this guide feature german language (language code: de). 
+Voice commands in this documentation feature german language (language code: de). 
 You can find a list of supported languages [here](https://rhasspy.readthedocs.io/en/latest/#supported-languages){:target="_blank"}. 
 
 ## Time to start
-This guide is going to cover all the steps needed to transform your raspberry pi into an offline voice assistant. Make sure to follow the instructions as described. 
+This documentation is going to cover all the steps needed to transform your raspberry pi into an offline voice assistant. Make sure to follow the instructions as described. 
 
 ## Step by step
 - [Hardware Setup](/hardware/hardware-setup.html)
