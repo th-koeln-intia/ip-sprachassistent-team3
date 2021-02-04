@@ -9,7 +9,7 @@ nav_order: 1
 <img src="img/homespace.jpg" style="max-width: 70%;"/>
 
 ## Introduction
-The following documentation provides a thorough guide on how to setup your personal offline voice assistant built upon the [rhasspy project](https://rhasspy.readthedocs.io/en/latest/){:target="_blank"}. 
+The following documentation provides a thorough guide on how to setup your personal offline voice assistant built upon the [rhasspy project](https://rhasspy.readthedocs.io/en/latest/){:target="_blank"}.
 
 ## Language notice
 Voice commands in this guide feature german language (language code: de). 
