@@ -33,9 +33,9 @@ The following command starts a local server, if Jekyll is installed with bundler
 bundle exec jekyll serve
 ```
 
-## Contributors
-Philipp Bach
-Ralitsa Raycheva
-Holger Adler
-Alexej Pitkowski
-Meltem Seven
+## Participants
+- Philipp Bach
+- Ralitsa Raycheva
+- Holger Adler
+- Alexej Pitkowski
+- Meltem Seven
