@@ -1,0 +1,376 @@
+[
+    {
+        "id": "56873a2d.9358bc",
+        "type": "tab",
+        "label": "Weather",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "471b9b91.a2b854",
+        "type": "http request",
+        "z": "56873a2d.9358bc",
+        "name": "TTS",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://192.168.0.177:12101/api/text-to-speech",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 1070,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "da2d3ec0.f1977",
+        "type": "change",
+        "z": "56873a2d.9358bc",
+        "name": "set city and country",
+        "rules": [
+            {
+                "t": "move",
+                "p": "slots.city",
+                "pt": "msg",
+                "to": "location.city",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "location.country",
+                "pt": "msg",
+                "to": "germany",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 330,
+        "y": 280,
+        "wires": [
+            [
+                "13cb1785.8df5c8"
+            ]
+        ]
+    },
+    {
+        "id": "e6afaaa1.ef1d38",
+        "type": "function",
+        "z": "56873a2d.9358bc",
+        "name": "",
+        "func": "msg = {payload: \"Hier ist das Wetter für \" + msg.location.city + \": \" +  msg.payload[0].weather[0].description + \", bei \" + Math.round(msg.payload[0].main.temp) + \" Grad. Die Luftfeuchtigkeit beträgt: \" + msg.payload[0].main.humidity + \" %.\"};\nreturn msg;\n\n\n\n\n/*\nmsg = {payload: \"Hier ist das Wetter für \" + msg.payload.location + \": \" +  msg.payload.detail + \", bei \" + Math.round(msg.payload.tempc) + \" Grad. Die Luftfeuchtigkeit beträgt: \" + msg.payload.humidity + \" %.\"};\nreturn msg;\n*/",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 900,
+        "y": 220,
+        "wires": [
+            [
+                "471b9b91.a2b854"
+            ]
+        ]
+    },
+    {
+        "id": "7bdae2cc.0d140c",
+        "type": "function",
+        "z": "56873a2d.9358bc",
+        "name": "",
+        "func": "var time = msg.payload.sunrise;\nvar date = new Date(time * 1000);\nvar hours = date.getHours();\nvar minutes = date.getMinutes();\nmsg = {payload: \"Die Sonne in \" + msg.payload.location + \" geht um \" + hours + \" Uhr\" + minutes + \" auf.\"};\nreturn msg;\n\n\n ",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 900,
+        "y": 260,
+        "wires": [
+            [
+                "471b9b91.a2b854"
+            ]
+        ]
+    },
+    {
+        "id": "e8365b5d.1ec958",
+        "type": "function",
+        "z": "56873a2d.9358bc",
+        "name": "",
+        "func": "var time = msg.payload.sunset;\nvar date = new Date(time * 1000);\nvar hours = date.getHours();\nvar minutes = date.getMinutes();\nmsg = {payload: \"Die Sonne in \" + msg.payload.location + \" geht um \" + hours + \" Uhr\" + minutes + \" unter.\"};\nreturn msg;\n\n\n ",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 900,
+        "y": 300,
+        "wires": [
+            [
+                "471b9b91.a2b854"
+            ]
+        ]
+    },
+    {
+        "id": "792aa1a1.6b9108",
+        "type": "function",
+        "z": "56873a2d.9358bc",
+        "name": "",
+        "func": "\nvar days = [\"Sonntag\", \"Montag\", \"Dienstag\", \"Mittwoch\", \"Donnerstag\", \"Freitag\", \"Samstag\"];\nvar today = new Date();\nvar returnMsg = \"Hier ist das Wetter für die kommenden Tage in \" + msg.entities[0].value + \". \";\nvar i = 0;\nfor (x of msg.payload.daily) {\n   y = new Date(x.dt * 1000); \n   if (y.getDay() != today.getDay()) {\n       returnMsg = returnMsg + days[y.getDay()] + \" \" + x.weather[0].description + \", bei \" + Math.round(x.temp.day) + \"Grad. \";\n   }\n}\n\nmsg = {payload: returnMsg};\n//msg = {payload: \"Test: \" + today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate()+ \" \" + today.getHours() + \":\" + today.getMinutes() + \":\" + today.getSeconds()};\nreturn msg;\n\n/*\nmsg = {payload: \"Hier ist das Wetter für \" + msg.location.city + \": \" +  msg.payload[0].weather[0].description + \", bei \" + Math.round(msg.payload[0].main.temp) + \" Grad. Die Luftfeuchtigkeit beträgt: \" + msg.payload[0].main.humidity + \" %.\"};\nreturn msg;\n\n\n\n\n/*\nmsg = {payload: \"Hier ist das Wetter für \" + msg.payload.location + \": \" +  msg.payload.detail + \", bei \" + Math.round(msg.payload.tempc) + \" Grad. Die Luftfeuchtigkeit beträgt: \" + msg.payload.humidity + \" %.\"};\nreturn msg;\n*/",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 900,
+        "y": 340,
+        "wires": [
+            [
+                "471b9b91.a2b854"
+            ]
+        ]
+    },
+    {
+        "id": "f3001c54.acfee",
+        "type": "function",
+        "z": "56873a2d.9358bc",
+        "name": "get coordinates for city",
+        "func": "msg.url = \"http://open.mapquestapi.com/geocoding/v1/address?key=hYS7bGx4JjHrBGKTz8wfoTkg5aFKN9ai&location=\" + msg.location.city + \",DE\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 200,
+        "y": 340,
+        "wires": [
+            [
+                "44c83719.b3c04"
+            ]
+        ]
+    },
+    {
+        "id": "44c83719.b3c04",
+        "type": "http request",
+        "z": "56873a2d.9358bc",
+        "name": "request to api to get coordinates",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 450,
+        "y": 340,
+        "wires": [
+            [
+                "a11e44bb.ebe798"
+            ]
+        ]
+    },
+    {
+        "id": "a11e44bb.ebe798",
+        "type": "change",
+        "z": "56873a2d.9358bc",
+        "name": "set coordinates",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload.results[0].locations[0].latLng.lat",
+                "pt": "msg",
+                "to": "location.lat",
+                "tot": "msg"
+            },
+            {
+                "t": "move",
+                "p": "payload.results[0].locations[0].latLng.lng",
+                "pt": "msg",
+                "to": "location.lon",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 400,
+        "wires": [
+            [
+                "1255db08.dd5ecd"
+            ]
+        ]
+    },
+    {
+        "id": "13cb1785.8df5c8",
+        "type": "switch",
+        "z": "56873a2d.9358bc",
+        "name": "check intent",
+        "property": "intent.name",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "GetWeatherInfo",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "GetSunriseInfo",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "GetSunsetInfo",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "GetWeeklyWeatherInfo",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 4,
+        "x": 530,
+        "y": 280,
+        "wires": [
+            [
+                "d15788cf.54c868"
+            ],
+            [
+                "1a11cd5d.fdb1c3"
+            ],
+            [
+                "9dfda428.a27bd8"
+            ],
+            [
+                "f3001c54.acfee"
+            ]
+        ]
+    },
+    {
+        "id": "1713a7b4.6d327",
+        "type": "websocket in",
+        "z": "56873a2d.9358bc",
+        "name": "rhasspy in",
+        "server": "5999adec.e962a4",
+        "client": "",
+        "x": 80,
+        "y": 280,
+        "wires": [
+            [
+                "432f009f.72f6c"
+            ]
+        ]
+    },
+    {
+        "id": "432f009f.72f6c",
+        "type": "switch",
+        "z": "56873a2d.9358bc",
+        "name": "check if city is set",
+        "property": "slots.city",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nnull"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 330,
+        "y": 240,
+        "wires": [
+            [
+                "da2d3ec0.f1977"
+            ]
+        ]
+    },
+    {
+        "id": "d15788cf.54c868",
+        "type": "openweathermap",
+        "z": "56873a2d.9358bc",
+        "name": "",
+        "wtype": "forecast",
+        "lon": "",
+        "lat": "",
+        "city": "",
+        "country": "",
+        "language": "de",
+        "x": 730,
+        "y": 220,
+        "wires": [
+            [
+                "e6afaaa1.ef1d38"
+            ]
+        ]
+    },
+    {
+        "id": "1a11cd5d.fdb1c3",
+        "type": "openweathermap",
+        "z": "56873a2d.9358bc",
+        "name": "",
+        "wtype": "current",
+        "lon": "",
+        "lat": "",
+        "city": "",
+        "country": "",
+        "language": "de",
+        "x": 730,
+        "y": 260,
+        "wires": [
+            [
+                "7bdae2cc.0d140c"
+            ]
+        ]
+    },
+    {
+        "id": "9dfda428.a27bd8",
+        "type": "openweathermap",
+        "z": "56873a2d.9358bc",
+        "name": "",
+        "wtype": "current",
+        "lon": "",
+        "lat": "",
+        "city": "",
+        "country": "",
+        "language": "de",
+        "x": 730,
+        "y": 300,
+        "wires": [
+            [
+                "e8365b5d.1ec958"
+            ]
+        ]
+    },
+    {
+        "id": "1255db08.dd5ecd",
+        "type": "openweathermap",
+        "z": "56873a2d.9358bc",
+        "name": "",
+        "wtype": "onecall",
+        "lon": "",
+        "lat": "",
+        "city": "",
+        "country": "",
+        "language": "de",
+        "x": 730,
+        "y": 340,
+        "wires": [
+            [
+                "792aa1a1.6b9108"
+            ]
+        ]
+    },
+    {
+        "id": "5999adec.e962a4",
+        "type": "websocket-listener",
+        "path": "ws://192.168.0.177:12101/api/events/intent",
+        "wholemsg": "true"
+    }
+]

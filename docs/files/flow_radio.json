@@ -1,0 +1,227 @@
+[
+    {
+        "id": "a65a3a94.635d98",
+        "type": "tab",
+        "label": "Radio",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "37099153.cea5fe",
+        "type": "switch",
+        "z": "a65a3a94.635d98",
+        "name": "check intent",
+        "property": "intent.name",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "StartRadio",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "StopRadio",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "NextRadio",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "PrevRadio",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 4,
+        "x": 390,
+        "y": 480,
+        "wires": [
+            [
+                "662066d6.989f48"
+            ],
+            [
+                "50c4049.493b47c"
+            ],
+            [
+                "d5e23fa3.ebb8c"
+            ],
+            [
+                "e0a6ed62.e089a"
+            ]
+        ]
+    },
+    {
+        "id": "44c01fb6.28dc9",
+        "type": "mpd out",
+        "z": "a65a3a94.635d98",
+        "name": "",
+        "topic": "",
+        "server": "9a410553.e09e3",
+        "x": 980,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b4e35915.2663c8",
+        "type": "function",
+        "z": "a65a3a94.635d98",
+        "name": "on",
+        "func": "return msg = {payload : \"play\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 890,
+        "y": 380,
+        "wires": [
+            [
+                "44c01fb6.28dc9"
+            ]
+        ]
+    },
+    {
+        "id": "50c4049.493b47c",
+        "type": "function",
+        "z": "a65a3a94.635d98",
+        "name": "off",
+        "func": "return msg = {payload : \"stop\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 570,
+        "y": 460,
+        "wires": [
+            [
+                "44c01fb6.28dc9",
+                "6a0f4fa7.6115a8"
+            ]
+        ]
+    },
+    {
+        "id": "d5e23fa3.ebb8c",
+        "type": "function",
+        "z": "a65a3a94.635d98",
+        "name": "next",
+        "func": "return msg = {payload : \"next\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 570,
+        "y": 500,
+        "wires": [
+            [
+                "44c01fb6.28dc9"
+            ]
+        ]
+    },
+    {
+        "id": "6a0f4fa7.6115a8",
+        "type": "function",
+        "z": "a65a3a94.635d98",
+        "name": "clear",
+        "func": "return msg = {payload : \"clear\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 730,
+        "y": 440,
+        "wires": [
+            [
+                "44c01fb6.28dc9"
+            ]
+        ]
+    },
+    {
+        "id": "662066d6.989f48",
+        "type": "function",
+        "z": "a65a3a94.635d98",
+        "name": "load",
+        "func": "return msg = {payload : \"load radiostations\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 570,
+        "y": 420,
+        "wires": [
+            [
+                "44c01fb6.28dc9",
+                "e58a2ff3.691f78"
+            ]
+        ]
+    },
+    {
+        "id": "e58a2ff3.691f78",
+        "type": "function",
+        "z": "a65a3a94.635d98",
+        "name": "repeat",
+        "func": "return msg = {payload : \"repeat 1\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 730,
+        "y": 400,
+        "wires": [
+            [
+                "b4e35915.2663c8",
+                "44c01fb6.28dc9"
+            ]
+        ]
+    },
+    {
+        "id": "e0a6ed62.e089a",
+        "type": "function",
+        "z": "a65a3a94.635d98",
+        "name": "prev",
+        "func": "return msg = {payload : \"previous\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 570,
+        "y": 540,
+        "wires": [
+            [
+                "44c01fb6.28dc9"
+            ]
+        ]
+    },
+    {
+        "id": "d73f5b04.9b3e6",
+        "type": "websocket in",
+        "z": "a65a3a94.635d98",
+        "name": "rhasspy in",
+        "server": "5999adec.e962a4",
+        "client": "",
+        "x": 160,
+        "y": 480,
+        "wires": [
+            [
+                "37099153.cea5fe"
+            ]
+        ]
+    },
+    {
+        "id": "9a410553.e09e3",
+        "type": "mpd-server",
+        "host": "192.168.0.177",
+        "port": "6600"
+    },
+    {
+        "id": "5999adec.e962a4",
+        "type": "websocket-listener",
+        "path": "ws://192.168.0.177:12101/api/events/intent",
+        "wholemsg": "true"
+    }
+]
