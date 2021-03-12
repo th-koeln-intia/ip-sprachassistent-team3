@@ -45,7 +45,6 @@ A list of timezones is available [here](https://en.wikipedia.org/wiki/List_of_tz
 sudo apt install git -y
 git clone https://github.com/respeaker/seeed-voicecard.git
 cd seeed-voicecard
-sudo ./install.sh
 sudo ./install.sh --compat-kernel
 sudo reboot
 ```
