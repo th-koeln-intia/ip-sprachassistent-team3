@@ -65,7 +65,7 @@ Start Rasa and grant yourself permission to edit Rasa's configuration files.
 docker-compose up -d # starts the container
 sudo chown -R pi /home/pi/rasa
 ```
-If everything went well, try accessing ```ip-address:5005``` from your browser. If something went wrong, try adding ```-it``` instead of ```-d``` to your ```docker-compose up``` command to see the output.
+If everything went well, try accessing ```ip-address:5005``` from your browser. If something went wrong, remove ```-d``` from your ```docker-compose up``` command to see the output.
 
 ## Attaching Rasa to Rhasspy
 

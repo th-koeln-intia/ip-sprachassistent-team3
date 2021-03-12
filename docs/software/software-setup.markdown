@@ -96,7 +96,7 @@ docker-compose up -d
 sudo chown -R pi /home/pi/rhasspy
 ```
 
-Rhasspy's web interface should be accessible at ```ip-address:12101```. If something went wrong, try adding ```-it``` instead of ```-d``` to your ```docker-compose up``` command to see the output.
+Rhasspy's web interface should be accessible at ```ip-address:12101```. If something went wrong, remove ```-d``` from your ```docker-compose up``` command to see the output.
 
 ### Node-RED
 
@@ -128,7 +128,7 @@ docker-compose up -d
 sudo chown -R pi /home/pi/node-red
 ```
 
-Node-RED web interface should be accessible at ```ip-address:1880```. If something went wrong, try adding ```-it``` instead of ```-d``` to your ```docker-compose up``` command to see the output.
+Node-RED web interface should be accessible at ```ip-address:1880```. If something went wrong, remove ```-d``` from your ```docker-compose up``` command to see the output.
 
 ### ZigBee2MQTT
 
@@ -167,7 +167,7 @@ Start Zigbee2MQTT service and grant yourself permission to edit Zigbee2MQTT conf
 docker-compose up -d
 sudo chown -R pi /home/pi/zigbee2mqtt
 ```
-Power LED of your CC2531 ZigBee USB stick will indicate success. If something went wrong, try adding ```-it``` instead of ```-d``` to your ```docker-compose up``` command to see the output.
+Power LED of your CC2531 ZigBee USB stick will indicate success. If something went wrong, remove ```-d``` from your ```docker-compose up``` command to see the output.
 
 <img src="../img/pi2.png" style="max-width: 75%;"/>
 
