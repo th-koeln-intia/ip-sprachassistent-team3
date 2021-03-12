@@ -46,6 +46,7 @@ sudo apt install git -y
 git clone https://github.com/respeaker/seeed-voicecard.git
 cd seeed-voicecard
 sudo ./install.sh
+sudo ./install.sh --compat-kernel
 sudo reboot
 ```
 
