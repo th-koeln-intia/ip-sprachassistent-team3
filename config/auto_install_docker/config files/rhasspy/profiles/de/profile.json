@@ -1,0 +1,32 @@
+{
+    "dialogue": {
+        "system": "rhasspy"
+    },
+    "intent": {
+        "system": "fsticuffs"
+    },
+    "microphone": {
+        "pyaudio": {
+            "device": "0"
+        },
+        "system": "pyaudio"
+    },
+    "sounds": {
+        "aplay": {
+            "device": "plughw:CARD=Headphones,DEV=0"
+        },
+        "system": "aplay"
+    },
+    "speech_to_text": {
+        "system": "pocketsphinx"
+    },
+    "text_to_speech": {
+        "system": "nanotts"
+    },
+    "wake": {
+        "pocketsphinx": {
+            "keyphrase": "hey apollo"
+        },
+        "system": "pocketsphinx"
+    }
+}

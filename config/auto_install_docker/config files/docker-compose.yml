@@ -1,0 +1,20 @@
+apollo:
+    image: "alexej1992/apollo_voice_assistant"
+    container_name: apollo
+    volumes:
+        - "/home/pi/apollo/rhasspy/profiles:/home/rhasspy/profiles"
+        - "/home/pi/apollo/node-red/data:/home/node-red/data"
+        - "/home/pi/apollo/zigbee2mqtt/data:/home/zigbee2mqtt/data"
+        - "/home/pi/apollo/logs:/home/logs"
+
+    devices:
+        - "/dev/snd:/dev/snd"
+        - "/dev/ttyACM0:/dev/ttyACM0"
+    command: "./home/autorun/autorun.sh"
+    tty: true
+    ports:
+        - "12101:12101"
+        - "1880:1880"
+        - "12183:12183"
+        - "6600:6600"
+
