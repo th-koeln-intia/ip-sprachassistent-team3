@@ -88,7 +88,7 @@ After pairing your light bulb visit ```/home/pi/apollo/logs/zigbee2mqtt.txt``` t
 Run the following command to update the node-red workflow with your lamp.
 
 ```shell
-./home/pi/apollo/lampupdate.sh <your lamps friendly name 
+./home/pi/apollo/lampupdate.sh <friendly name>
 # example: ./home/pi/apollo/lampupdate.sh 0x00158d000520ac5e
 ```
 
