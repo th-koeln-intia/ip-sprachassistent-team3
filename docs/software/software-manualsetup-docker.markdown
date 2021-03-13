@@ -93,3 +93,10 @@ Run the following command to update the node-red workflow with your lamp.
 ```
 
 After entering a invalid friendly name, visit Node-RED's web interface at ```ip-address:1880``` to add the lamp manually by editing all lamp nodes.
+
+Restart your Voice Assistant
+```shell
+cd /home/pi/apollo
+docker-compose down
+docker-compose up -d
+```
