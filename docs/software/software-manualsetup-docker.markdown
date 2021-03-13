@@ -61,6 +61,7 @@ rm apollo.zip
 ### Start your Voice Assistant
 ```shell
 cd /home/pi/apollo
+./ipupdate.sh
 docker-compose up -d
 ```
 
