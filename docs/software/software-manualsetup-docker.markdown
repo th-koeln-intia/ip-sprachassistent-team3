@@ -2,7 +2,7 @@
 layout: default
 parent: Auto setup
 grand_parent: Software
-title: Auto docker
+title: Docker container
 nav_order: 1
 has_toc: true
 ---

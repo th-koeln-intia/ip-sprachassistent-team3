@@ -2,7 +2,7 @@
 layout: default
 parent: Auto setup
 grand_parent: Software
-title: Auto script
+title: Shell script
 nav_order: 2
 has_toc: true
 ---
