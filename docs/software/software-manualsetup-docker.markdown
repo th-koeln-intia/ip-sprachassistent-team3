@@ -27,7 +27,7 @@ A custom docker container was created for running all the required voice assista
 - Mpd 
 
 ## Implementation
-Setup your Pi according to the hardware [page](../hardware/hardware-setup.html){:target="_blank"}.
+Set up your Pi according to the hardware [page](../hardware/hardware-setup.html){:target="_blank"}.
 
 ### Update your Pi
 ```shell
