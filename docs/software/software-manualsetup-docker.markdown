@@ -48,6 +48,14 @@ sudo chmod 777 /dev/ttyACM0
 sudo reboot
 ```
 
+### Docker 
+```shell
+curl -sSL https://get.docker.com | sh 
+sudo usermod -a -G docker pi 
+sudo apt-get install docker-compose -y
+sudo reboot 
+```
+
 ### Service configuration
 ```shell
 cd /home/pi
@@ -66,3 +74,5 @@ docker-compose up -d
 You will hear *Apollo Apollo*, when the implementation was successful.
 If something went wrong, remove ```-d``` from your ```docker-compose up``` command to see the output.
 For service level errors visit ```/home/pi/apollo/logs```. Each service has it's own log file.
+
+### Pairing your light
